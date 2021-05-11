@@ -1,0 +1,392 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #162427;
+  font-family: 'ITC Avant Garde Gothic Std Demi';
+}
+
+a.active {
+    color: #49b6d0 !important;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #14b6cb;
+}
+
+a.icon-hover {
+  font-family: 'ITC Avant Garde Gothic Std Book';
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 0.3s ease-out;
+}
+
+a.icon-hover img {
+    width: 0;
+    transition: all 0.2s ease-out;
+    margin-top: -5px;
+    margin-left: 4px;
+}
+
+a.icon-hover:hover img {
+    width: 12px;
+}
+
+button {
+  outline: 0 !important;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.75;
+  color: #7a7e9a;
+  font-family: 'Caecilia LT Pro 45 Light';
+  font-size: 16px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-gutter {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+.no-pad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.block {
+  display: block;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mtb-15 {
+  margin: 15px 0;
+}
+
+.mtb-25 {
+  margin: 25px 0;
+}
+
+.pl-30 {
+  padding-left: 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} 
+
+
+
+button:focus {
+    outline: none;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.inactiveLink  {
+  pointer-events: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+:focus {
+outline: 0;
+text-decoration: none;
+} 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s ease-out;
+}
+
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.ptb-70 {
+  padding: 70px 0;
+}
+
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+
+.ptb-50{
+  padding: 50px 0;
+}
+
+.pt-70 {
+  padding-top: 70px;
+}
+
+.pb-70 {
+  padding-bottom: 70px;
+}
+
+.pt-140 {
+  padding-top: 140px;
+}
+
+.ptb-30 {
+  padding: 40px 0;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pt-200 {
+  padding-top: 200px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #716b70;
+  font-family: 'ITC Avant Garde Gothic Std Demi';
+  line-height: 1.2em;
+}
+
+.h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+
+section {
+    overflow: hidden;
+}
+
+
+
+.mr-100 {
+    margin:100px 0;
+}
+
+.mr-50 {
+    margin: 50px 0;
+}
+
+.mr-75 {
+    margin: 75px 0;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mr-auto {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.trans5 {
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
+.trans3  {
+    transition: all 0.3s ease-out;
+}
+
+img.responsive {
+    width: 100%;
+}
+
+
+a.nav-link.btn-hover {
+  border: 1px solid #14b6cb;
+}
+
+
+
+.btn-big.pri {
+    transition: all 0.5s ease-out;
+    width: 260px;
+}
+
+a.btn-big.pri img {
+    display: inline-flex;
+    width: 0px;
+    margin-left: 0px;
+    margin-top: -5px;
+    transition: all 0.3s ease-out;
+}
+
+.btn-big.pri:hover img {
+  width: 20px;
+  margin-left: 4px;
+}
+
+.btn-big.pri:hover  {
+    color: #fff; 
+    
+}
+
+
+
+
+/*================================================
+Go Top CSS
+=================================================*/
+.go-top {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  right: 15px;
+  color: #ffffff;
+  background-color: #a6ce39;
+  z-index: 4;
+  width: 30px;
+  text-align: center;
+  height: 30px;
+  line-height: 40px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .9s;
+  transition: .9s;
+  border-radius: 50%;
+  border: 1px solid #a6ce39;
+}
+
+.go-top.active {
+  top: 98%;
+  -webkit-transform: translateY(-98%);
+          transform: translateY(-98%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-top i {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 22px;
+}
+
+.go-top i:last-child {
+  opacity: 0;
+  visibility: hidden;
+  top: 60%;
+}
+
+.go-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #14b6cb;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.go-top:hover, .go-top:focus {
+  color: #ffffff;
+}
+
+.go-top:hover::before, .go-top:focus::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.go-top:hover i:first-child, .go-top:focus i:first-child {
+  opacity: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.go-top:hover i:last-child, .go-top:focus i:last-child {
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+
+.bread-crumbs h6 i {
+  margin: 0 5px;  
+  font-size: 13px;
+}
+
+.bread-crumbs h6 {
+    color: #ffffff;
+    font-family: 'ITC Avant Garde Gothic Std Book';
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
