@@ -34,7 +34,7 @@
 
                 {!! $project->short_info !!}
                 @if($project->button_title)
-                <a href="#" class="btn-big pri" data-toggle="modal" data-target="#donateModal" >{{$project->button_title}} <img src="images/next.svg"> </a>
+                <a href="#" class="btn-big pri" data-toggle="modal" data-target="#donateModal" >{{$project->button_title}} <img src="/images/next.svg"> </a>
                 @endif
             </div>
 
