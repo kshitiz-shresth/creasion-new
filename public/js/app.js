@@ -3753,6 +3753,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // for CK editor
  // for Axios
 
@@ -3772,6 +3783,8 @@ __webpack_require__.r(__webpack_exports__);
       title: '',
       coverImage: '',
       coverImageLocation: '',
+      buttonTitle: '',
+      buttonContent: '',
       menuImage: '',
       menuImageLocation: '',
       shortInformation: '',
@@ -3843,7 +3856,9 @@ __webpack_require__.r(__webpack_exports__);
       this.sliderID = this.content.slider_id;
       this.id = this.content.id;
       this.coverImageLocation = this.content.coverImage;
-      this.menuImageLocation = this.content.menuImage; // set method to put for editing which will be forward to controller after
+      this.menuImageLocation = this.content.menuImage;
+      this.buttonTitle = this.content.button_title;
+      this.buttonContent = this.content.button_content; // set method to put for editing which will be forward to controller after
 
       this.method = 'put';
     }
@@ -3882,6 +3897,8 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('subProjects', JSON.stringify(this.subProjects));
       formData.append('ourImpacts', JSON.stringify(this.ourImpacts));
       formData.append('sdgs', JSON.stringify(this.sdgs));
+      formData.append('buttonTitle', this.buttonTitle);
+      formData.append('buttonContent', this.buttonContent);
       this.ourImpacts.forEach(function (item, index) {
         formData.append("ourImpactIconImage[".concat(index, "]"), item.iconImage);
       });
@@ -8864,7 +8881,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nsmall{\r\n    font-weight: 400;\n}\r\n", ""]);
+exports.push([module.i, "\nsmall{\n    font-weight: 400;\n}\n", ""]);
 
 // exports
 
@@ -53753,6 +53770,62 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group  col-md-5 " }, [
+              _c(
+                "label",
+                { staticClass: "control-label", attrs: { for: "name" } },
+                [_vm._v("Title")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.buttonTitle,
+                    expression: "buttonTitle"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", required: "" },
+                domProps: { value: _vm.buttonTitle },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.buttonTitle = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "form-group  col-md-7" },
+              [
+                _c(
+                  "label",
+                  { staticClass: "control-label", attrs: { for: "name" } },
+                  [_vm._v("Content")]
+                ),
+                _vm._v(" "),
+                _c("ckeditor", {
+                  attrs: { editor: _vm.editor, config: _vm.editorConfig },
+                  model: {
+                    value: _vm.buttonContent,
+                    callback: function($$v) {
+                      _vm.buttonContent = $$v
+                    },
+                    expression: "buttonContent"
+                  }
+                })
+              ],
+              1
+            ),
+            _vm._v(" "),
             _c(
               "div",
               { staticClass: "form-group col-md-12" },
@@ -53825,7 +53898,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(3),
             _vm._v(" "),
             _vm._l(_vm.faqs, function(item, index) {
               return _c("div", { key: index }, [
@@ -53916,11 +53989,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(3),
+            _vm._m(4),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c("table", { staticClass: "table table-bordered" }, [
-                _vm._m(4),
+                _vm._m(5),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -54090,11 +54163,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(5),
+            _vm._m(6),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c("table", { staticClass: "table table-bordered" }, [
-                _vm._m(6),
+                _vm._m(7),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -54191,11 +54264,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(7),
+            _vm._m(8),
             _vm._v(" "),
             _c("div", { staticClass: "row container-fluid" }, [
               _c("div", { staticClass: "form-group col-md-4" }, [
-                _vm._m(8),
+                _vm._m(9),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -54274,11 +54347,11 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _vm._m(9),
+            _vm._m(10),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c("table", { staticClass: "table table-bordered" }, [
-                _vm._m(10),
+                _vm._m(11),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -54372,7 +54445,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._m(11, true),
+                        _vm._m(12, true),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -54459,14 +54532,14 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(12),
+            _vm._m(13),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c(
                 "table",
                 { staticClass: "table table-bordered" },
                 [
-                  _vm._m(13),
+                  _vm._m(14),
                   _vm._v(" "),
                   _c(
                     "draggable",
@@ -54543,7 +54616,7 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._m(14, true),
+                          _vm._m(15, true),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -54632,13 +54705,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(15),
+            _vm._m(16),
             _vm._v(" "),
             _c(
               "div",
               { staticClass: "form-group col-md-6" },
               [
-                _vm._m(16),
+                _vm._m(17),
                 _vm._v(" "),
                 _c("ckeditor", {
                   attrs: { editor: _vm.editor, config: _vm.editorConfig },
@@ -54659,7 +54732,7 @@ var render = function() {
                 "table",
                 { staticClass: "table table-bordered" },
                 [
-                  _vm._m(17),
+                  _vm._m(18),
                   _vm._v(" "),
                   _c(
                     "draggable",
@@ -54834,6 +54907,16 @@ var staticRenderFns = [
       { staticClass: "control-label", attrs: { for: "name" } },
       [_vm._v("Cover "), _c("small", [_vm._v("(upload JPEG [recommended])")])]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group h4 col-md-12" }, [
+      _c("label", { staticClass: "control-label", attrs: { for: "name" } }, [
+        _vm._v("Button")
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -71215,10 +71298,10 @@ var regionDayMap = {
 /*!*********************************************!*\
   !*** ./node_modules/weekstart/package.json ***!
   \*********************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, deprecated, description, devDependencies, homepage, keywords, license, main, module, name, repository, scripts, types, umd:main, version, default */
+/*! exports provided: _args, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, description, devDependencies, homepage, keywords, license, main, module, name, repository, scripts, types, umd:main, version, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_from\":\"weekstart\",\"_id\":\"weekstart@1.0.1\",\"_inBundle\":false,\"_integrity\":\"sha512-h6B1HSJxg7sZEXqIpDqAtwiDBp3x5y2jY8WYcUSBhLTcTCy7laQzBmamqMuQM5fpvo1pgpma0OCRpE2W8xrA9A==\",\"_location\":\"/weekstart\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"tag\",\"registry\":true,\"raw\":\"weekstart\",\"name\":\"weekstart\",\"escapedName\":\"weekstart\",\"rawSpec\":\"\",\"saveSpec\":null,\"fetchSpec\":\"latest\"},\"_requiredBy\":[\"#USER\",\"/\"],\"_resolved\":\"https://registry.npmjs.org/weekstart/-/weekstart-1.0.1.tgz\",\"_shasum\":\"950970b48e5797e06fc1a762f3d0f013312321e1\",\"_spec\":\"weekstart\",\"_where\":\"C:\\\\xamppp\\\\htdocs\\\\creasion\",\"author\":{\"name\":\"Denis Sikuler\"},\"bugs\":{\"url\":\"https://github.com/gamtiq/weekstart/issues\"},\"bundleDependencies\":false,\"deprecated\":false,\"description\":\"Library to get first day of week.\",\"devDependencies\":{\"@babel/preset-env\":\"7.6.3\",\"eslint\":\"6.5.1\",\"eslint-config-guard\":\"1.0.3\",\"ink-docstrap\":\"1.3.2\",\"jest\":\"24.9.0\",\"jsdoc\":\"3.6.3\",\"microbundle\":\"0.4.4\",\"version-bump-prompt\":\"5.0.5\"},\"homepage\":\"https://github.com/gamtiq/weekstart\",\"keywords\":[\"week\",\"start\",\"first\",\"day\",\"locale\",\"country\",\"region\"],\"license\":\"MIT\",\"main\":\"dist/commonjs/main.js\",\"module\":\"dist/es-module/main.js\",\"name\":\"weekstart\",\"repository\":{\"type\":\"git\",\"url\":\"git://github.com/gamtiq/weekstart.git\"},\"scripts\":{\"all\":\"npm run check-all && npm run doc && npm run build\",\"build\":\"npm run build-umd && npm run build-commonjs && npm run build-esm && npm run build-umd-min\",\"build-commonjs\":\"microbundle build \\\"src/!(*.test).js\\\" --output dist/commonjs --format cjs --strict --no-compress\",\"build-esm\":\"microbundle build \\\"src/!(*.test).js\\\" --output dist/es-module --format es --no-compress\",\"build-umd\":\"microbundle build src/main.js src/full.js --output dist --format umd --strict --no-compress\",\"build-umd-min\":\"microbundle build src/main.js src/full.js --output dist/min --format umd --strict\",\"check\":\"npm run lint && npm test\",\"check-all\":\"npm run lint-all && npm test\",\"doc\":\"jsdoc -c jsdoc-conf.json\",\"lint\":\"eslint --cache --max-warnings 0 \\\"**/*.js\\\"\",\"lint-all\":\"eslint --max-warnings 0 \\\"**/*.js\\\"\",\"lint-all-error\":\"eslint \\\"**/*.js\\\"\",\"lint-error\":\"eslint --cache \\\"**/*.js\\\"\",\"release\":\"bump patch --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"release-major\":\"bump major --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"release-minor\":\"bump minor --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"test\":\"jest\"},\"types\":\"./index.d.ts\",\"umd:main\":\"dist/main.js\",\"version\":\"1.0.1\"}");
+module.exports = JSON.parse("{\"_args\":[[\"weekstart@1.0.1\",\"/media/kshitiz/C6FEF01EFEF00887/Users/Hp/Documents/Keroneva/creasion\"]],\"_from\":\"weekstart@1.0.1\",\"_id\":\"weekstart@1.0.1\",\"_inBundle\":false,\"_integrity\":\"sha512-h6B1HSJxg7sZEXqIpDqAtwiDBp3x5y2jY8WYcUSBhLTcTCy7laQzBmamqMuQM5fpvo1pgpma0OCRpE2W8xrA9A==\",\"_location\":\"/weekstart\",\"_phantomChildren\":{},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"weekstart@1.0.1\",\"name\":\"weekstart\",\"escapedName\":\"weekstart\",\"rawSpec\":\"1.0.1\",\"saveSpec\":null,\"fetchSpec\":\"1.0.1\"},\"_requiredBy\":[\"/\"],\"_resolved\":\"https://registry.npmjs.org/weekstart/-/weekstart-1.0.1.tgz\",\"_spec\":\"1.0.1\",\"_where\":\"/media/kshitiz/C6FEF01EFEF00887/Users/Hp/Documents/Keroneva/creasion\",\"author\":{\"name\":\"Denis Sikuler\"},\"bugs\":{\"url\":\"https://github.com/gamtiq/weekstart/issues\"},\"description\":\"Library to get first day of week.\",\"devDependencies\":{\"@babel/preset-env\":\"7.6.3\",\"eslint\":\"6.5.1\",\"eslint-config-guard\":\"1.0.3\",\"ink-docstrap\":\"1.3.2\",\"jest\":\"24.9.0\",\"jsdoc\":\"3.6.3\",\"microbundle\":\"0.4.4\",\"version-bump-prompt\":\"5.0.5\"},\"homepage\":\"https://github.com/gamtiq/weekstart\",\"keywords\":[\"week\",\"start\",\"first\",\"day\",\"locale\",\"country\",\"region\"],\"license\":\"MIT\",\"main\":\"dist/commonjs/main.js\",\"module\":\"dist/es-module/main.js\",\"name\":\"weekstart\",\"repository\":{\"type\":\"git\",\"url\":\"git://github.com/gamtiq/weekstart.git\"},\"scripts\":{\"all\":\"npm run check-all && npm run doc && npm run build\",\"build\":\"npm run build-umd && npm run build-commonjs && npm run build-esm && npm run build-umd-min\",\"build-commonjs\":\"microbundle build \\\"src/!(*.test).js\\\" --output dist/commonjs --format cjs --strict --no-compress\",\"build-esm\":\"microbundle build \\\"src/!(*.test).js\\\" --output dist/es-module --format es --no-compress\",\"build-umd\":\"microbundle build src/main.js src/full.js --output dist --format umd --strict --no-compress\",\"build-umd-min\":\"microbundle build src/main.js src/full.js --output dist/min --format umd --strict\",\"check\":\"npm run lint && npm test\",\"check-all\":\"npm run lint-all && npm test\",\"doc\":\"jsdoc -c jsdoc-conf.json\",\"lint\":\"eslint --cache --max-warnings 0 \\\"**/*.js\\\"\",\"lint-all\":\"eslint --max-warnings 0 \\\"**/*.js\\\"\",\"lint-all-error\":\"eslint \\\"**/*.js\\\"\",\"lint-error\":\"eslint --cache \\\"**/*.js\\\"\",\"release\":\"bump patch --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"release-major\":\"bump major --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"release-minor\":\"bump minor --commit --tag --all --push package.json package-lock.json bower.json component.json\",\"test\":\"jest\"},\"types\":\"./index.d.ts\",\"umd:main\":\"dist/main.js\",\"version\":\"1.0.1\"}");
 
 /***/ }),
 
@@ -71894,8 +71977,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xamppp\htdocs\creasion\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xamppp\htdocs\creasion\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /media/kshitiz/C6FEF01EFEF00887/Users/Hp/Documents/Keroneva/creasion/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /media/kshitiz/C6FEF01EFEF00887/Users/Hp/Documents/Keroneva/creasion/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

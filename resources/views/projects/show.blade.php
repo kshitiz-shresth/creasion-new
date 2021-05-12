@@ -5,7 +5,24 @@
 
 
 @section('body')
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h6 class="modal-title" id="donateMhead">{{$project->button_title}}</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <div class="donate-bank">
+               {!! $project->button_content !!}
+            </div>
+            </div>
 
+        </div>
+        </div>
+    </div>
     <div class="creasion-banner inner-banner" style="background: url({{ Voyager::image($project->coverImage) }});">
         <div class="banner-overlay"></div>
         <div class="container">
@@ -16,6 +33,9 @@
                 </div>
 
                 {!! $project->short_info !!}
+                @if($project->button_title)
+                <a href="#" class="btn-big pri" data-toggle="modal" data-target="#donateModal" >{{$project->button_title}} <img src="images/next.svg"> </a>
+                @endif
             </div>
 
         </div>

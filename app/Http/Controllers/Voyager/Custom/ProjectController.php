@@ -463,6 +463,8 @@ class ProjectController extends VoyagerBaseController
             $project->sub_project_title = $request->sub_project_title;
             $project->menuImage = $menuImageLocation;
             $project->our_impacts = json_encode($updatedImpactIcon);
+            $project->button_title = $request->buttonTitle;
+            $project->button_content = $request->buttonContent;
             $project->save();
             return 'done';
         }
@@ -492,6 +494,8 @@ class ProjectController extends VoyagerBaseController
             $project->faqs = $request->faqs;
             $project->slug = $projectSlug;
             $project->our_impacts = json_encode($updatedImpactIcon);
+            $project->button_title = $request->buttonTitle;
+            $project->button_content = $request->buttonContent;
             $project->update();
             return 'done';
         }

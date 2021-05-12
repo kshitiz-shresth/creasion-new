@@ -30,7 +30,18 @@
                     </div>
                     <input type="file" v-on:change="changeImage" id="myfile">
             </div>
-
+            <!-- Button  -->
+            <div class="form-group h4 col-md-12">
+                <label class="control-label" for="name">Button</label>
+            </div>
+            <div class="form-group  col-md-5 ">
+                <label class="control-label" for="name">Title</label>
+                <input type="text" class="form-control" v-model="buttonTitle" required>
+            </div>
+            <div class="form-group  col-md-7">
+                <label class="control-label" for="name">Content</label>
+                <ckeditor :editor="editor" v-model="buttonContent" :config="editorConfig"></ckeditor>
+            </div>
             <!-- Short Information -->
             <div class="form-group col-md-12">
                 <label class="control-label" for="name">Short Information</label>
@@ -309,6 +320,8 @@ export default {
             title:'',
             coverImage:'',
             coverImageLocation:'',
+            buttonTitle:'',
+            buttonContent:'',
             menuImage:'',
             menuImageLocation:'',
             shortInformation: '',
@@ -386,6 +399,8 @@ export default {
             this.id = this.content.id;
             this.coverImageLocation = this.content.coverImage;
             this.menuImageLocation = this.content.menuImage;
+            this.buttonTitle = this.content.button_title;
+            this.buttonContent = this.content.button_content;
             
             // set method to put for editing which will be forward to controller after
             this.method = 'put';
@@ -425,6 +440,9 @@ export default {
             formData.append('subProjects',JSON.stringify(this.subProjects));
             formData.append('ourImpacts',JSON.stringify(this.ourImpacts));
             formData.append('sdgs',JSON.stringify(this.sdgs));
+            formData.append('buttonTitle',this.buttonTitle);
+            formData.append('buttonContent',this.buttonContent);
+
             this.ourImpacts.forEach((item,index) => {
                 formData.append(`ourImpactIconImage[${index}]`,item.iconImage);
             });
