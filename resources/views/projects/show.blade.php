@@ -1,4 +1,4 @@
-@extends('layout.app')  
+@extends('layout.app')
 
 
 @section('title','Projects')
@@ -64,13 +64,13 @@
 
                                 </li>
                                 @endforeach
-                                                                
+
                             </ul>
-                        </div> 
-                    </div> 
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </section>
     @endif
 
@@ -87,7 +87,7 @@
                         @php $col = 3; @endphp
                     @endif
                     @foreach (json_decode($project->our_impacts) as $item)
-                        
+
                         <div class="col-md-{{ $col }} col-sm-6">
                         <div class="pr-imp-card">
                             <img src="/storage/{{ $item->iconLocation }}">
@@ -98,18 +98,18 @@
                                 @endif
                             </h2>
 
-                            <h4 class="counter-subhead">{{ $item->title }}</h4>    
+                            <h4 class="counter-subhead">{{ $item->title }}</h4>
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
             </div>
         </div>
     </section>
     @endif
 
-    
+
 
     @if ($subProjects)
     <section class="inner-projects ptb-70">
@@ -148,10 +148,10 @@
                                             <div class="id-ns">
                                             <!--  <img src="/images/vfc/empower-logo.png" class="if-logo"> -->
                                                 <h2>{{ $item->title }}</h2>
-                                                
+
                                                 {!! $subProject->shortDescription !!}
 
-                                                
+
                                                 <div class="id-imp-wrap">
                                                     @foreach ($subProject->counterSection as $counterItem)
                                                         <div class="id-imapct">
@@ -167,7 +167,7 @@
                                                     @endforeach
 
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
 
@@ -187,8 +187,8 @@
                                                             <li><img src="/storage/sub-projects/countries/{{ $item }}"></li>
                                                         @endforeach
                                                     </ul>
-                                                </div>  
-                                                @endif                                              
+                                                </div>
+                                                @endif
                                                 @foreach ($subProject->carouselSection as $carouselItem)
                                                 <div class="id-detail id-tes">
                                                     <h4>{{ $carouselItem->topLevelTitle }}</h4>
@@ -225,7 +225,7 @@
                                                         @if ($subProject->mapSection->mapCode)
                                                         <div class="map">
                                                             {!! $subProject->mapSection->mapCode !!}
-                                                        </div>  
+                                                        </div>
                                                         @endif
                                                         @if ($subProject->mapSection->districtName)
                                                         <div class="cov-resp-names">
@@ -234,9 +234,9 @@
                                                                     <li>{{ $item }}</li>
                                                                 @endforeach
                                                             </ul>
-                                                        </div> 
+                                                        </div>
                                                         @endif
-                                                        
+
                                                     </div>
                                                 @endif
                                             </div>
@@ -251,9 +251,11 @@
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
     @else
+        @if(view()->exists('staticProjects.'.Str::slug($project->title)))
         @include('staticProjects.'.Str::slug($project->title))
+        @endif
     @endif
 
 
@@ -277,14 +279,14 @@
                             <p>{{ $item->body }}</p>
                         </div>
                     </div>
-                </div>   
+                </div>
                 @endforeach
-                
 
-                    
+
+
             </div>
-        </div>        
-    </section>   
+        </div>
+    </section>
     @endif
 
     {{-- VFC Testimonial --}}
@@ -309,16 +311,16 @@
                             <p>{{ $item->body }}</p>
                         </div>
                     </div>
-                </div>   
+                </div>
                 @endforeach
-                
 
-                    
+
+
             </div>
-        </div>        
-    </section>   
+        </div>
+    </section>
     @endif
-    
+
     @if(count(json_decode($project->sdgs))>0)
     <section class="sdg-logos ptb-50">
         <div class="container">
@@ -353,6 +355,6 @@
 
 @section('js')
         <script>
-        
+
         </script>
 @endsection

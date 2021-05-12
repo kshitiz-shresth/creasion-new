@@ -16,24 +16,27 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-md">
                         <a class="navbar-brand" href="/">
-                            <img src="{{ Voyager::image(setting('site.logo')) }}" >
+                            <img src="{{ Voyager::image(setting('site.logo')) }}">
                         </a>
                         @php
                             $s = Request::segment(2);
-                            if(preg_match_all('/\b(\w)/',$s,$m)) {
-                            $v = implode('',$m[1]); // $v is now SOQTU
+                            if (preg_match_all('/\b(\w)/', $s, $m)) {
+                                $v = implode('', $m[1]); // $v is now SOQTU
                             }
-                        @endphp    
-                        @if(Request::segment(1)=="projects") 
-                        <a class="navbar-brand" href="/">
-                                <img src="/storage/icons/{{ $v }}.png">
-                        </a>
+                        @endphp
+                        @if (Request::segment(1) == 'projects')
+                            @if (file_exists(public_path('storage/icons/' . $v . '.png')))
+                                <a class="navbar-brand" href="/">
+
+                                    <img src="/storage/icons/{{ $v }}.png">
+                                </a>
+                            @endif
                         @endif
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 
-
+{{--
                             <ul class="navbar-nav">
-                                
+
                                 <li class="nav-item">
                                     <a href="" class="nav-link">
                                         About
@@ -76,26 +79,28 @@
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Projects 
+                                        Projects
                                     </a>
                                     <ul class="dropdown-menu project-dropdown">
                                         @foreach (\App\Project::orderBy('order')->get() as $item)
                                             <li class="nav-item nav-vfc">
-                                                <a href="{{ route('showProject',Str::slug($item->title)) }}" class="nav-link">
-                                                    <img src="{{ Voyager::image($item->menuImage) }}" class="nav-img">
+                                                <a href="{{ route('showProject', Str::slug($item->title)) }}"
+                                                    class="nav-link">
+                                                    <img src="{{ Voyager::image($item->menuImage) }}"
+                                                        class="nav-img">
                                                     <div class="nav-overlay"></div>
                                                     <span>{{ $item->title }}</span>
                                                 </a>
-                                            </li>   
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </li>
 
-                                
+
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        Resources 
+                                        Resources
                                     </a>
 
                                     <ul class="dropdown-menu project-dropdown">
@@ -139,7 +144,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    
+
                                 </li>
 
                                 <li class="nav-item">
@@ -195,6 +200,32 @@
                                         </li>
                                     </ul>
                                 </li>
+                            </ul> --}}
+
+                            <ul class="navbar-nav">
+                                @foreach (menu('creasion','_json') as $item)
+                                <li class="nav-item">
+                                    <a href="{{ $item->url }}" class="nav-link">
+                                        {{ $item->title }}
+                                    </a>
+                                    @if(!$item->children->isEmpty())
+                                   <ul class="dropdown-menu project-dropdown iv-four-col">
+                                        @foreach ($item->children as $subitem)
+                                            <li class="nav-item nav-wss">
+                                                <a href="{{ $subitem->url }}" class="nav-link">
+                                                    @php
+                                                        $location = Str::slug($item->title).'/'.Str::slug($subitem->title).'/menu-image.jpg';
+                                                    @endphp
+                                                    <img src="{{ Voyager::image($location) }}" class="nav-img">
+                                                    <div class="nav-overlay"></div>
+                                                    <span>{{ $subitem->title }}</span>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </li>
+                                @endforeach
                             </ul>
 
 
