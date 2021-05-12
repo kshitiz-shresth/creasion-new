@@ -22,7 +22,7 @@
                         <h6>A/C - 1510142939500013 </h6>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </div>
@@ -46,19 +46,25 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="iabs-left">
-                            <h4 class="heading-text inline"><span>An initiative taken in response</span> to the growing threat of the second wave of COVID-19 in Nepal that is projected to create massive shortage of oxygen cylinders and impact recovery of infected patients</h4>
+                            <h4 class="heading-text inline">
+                            <span>The second wave of COVID-19 pandemic has created a health crisis in Nepal.</span> The Test Positivity Rate (TPR) after
+                            mid-April is almost 50% which is 10 times higher than the threshold of 5 % recommended by WHO. On an average,
+                            over 8000 have tested positive since the beginning of May and the demand for health infrastructures
+                            such as oxygen cylinders, concentrators, ICU beds and ventilators is increasing. 
+                            </h4>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="iabs-right">
                             <p>
-                                Nepal has already plunged into the second wave of COVID-19 and the rate of infections are projected to grow uncontrollably in the coming days. Since late April, at least 3000 people are infected daily in Nepal and the test positivity rate has grown to 34.4%. This statistic predicts a deadly scenario for Nepal and assumes a health catastrophe similar to what India has been facing since weeks.  
+                            Nepal has already plunged deep into the second wave of COVID 19 and the rate of infections will only grow uncontrollably in the coming days. The ongoing scenario assumes a health catastrophe similar or even worse than what India has been facing since weeks.
 
                             </p>
 
                             <p>
-                                Oxygen for Nepal aims to avert this crisis and ready oxygen cylinders for emergency use for infected patients if and when required. Currently the production capacity of Nepal is 8000 cylinders per day and the demand stands at 4500-5000 cylinders per day. Although there are 70,000-80,000 oxygen cylinders at stock, there is shortage of 40,000 cylinders to address the COVID-19 pandemic. This initiative aims to fill this gap and ensure cylinder shortage does not claim the lives of anybody.
+                               CREASION has stepped forward to avert this crisis in any way possible. The initiative primarily aims to manage necessary health infrastructures and provide them to those in critical need- hospitals and individuals alike. We believe emergency preparedness and response is the need of the hour and through effective fund collection and channelization, the initiative will make an effort to fight against COVID-19 in Nepal. 
+
                             </p>
                         </div>
                     </div>
@@ -76,13 +82,13 @@
                                     <li class="accordion-item">
                                         <a class="accordion-title" href="javascript:void(0)">
                                             <i><img src="images/caret.png" /></i>
-                                            What is the operation modality of Oxygen for Nepal?
+                                            What is Oxygen for Nepal?
                                         </a>
 
                                         <p class="accordion-content">
                                             <span>
-                                                The initial process is fundraising for the cylinders. We aim to collect $500,000 for 5000 cylinders through crowdfunding. The funds will be channelised for the purchase of oxygen cylinders which will be distributed through hubs established in different locations around Nepal.  
-                                
+                                            Oxygen for Nepal is one of the interventions of COVID Alliance for Nepal that has been initiated and led by CREASION. CREASION through its years of experience in disaster management as first responders has ideated this project to primarily fill the demand and supply gap of oxygen cylinders in response to the COVID-19 crisis.
+
                                             </span>
                                         </p>
                                     </li>
@@ -90,12 +96,13 @@
                                     <li class="accordion-item">
                                         <a class="accordion-title" href="javascript:void(0)">
                                             <i><img src="images/caret.png" /></i>
-                                            Where is the project intervention based?  
+                                            How will Oxygen for Nepal manage cylinders since logistics and procurement is already a challenge during this crisis?
                                         </a>
 
                                         <p class="accordion-content">
                                             <span>
-                                                For now, we plan to pilot our project in Kathmandu, Birgunj and Nepalgunj, the three hotspots of COVID-19 in Nepal. For coordination, hubs will be formed in the respective locations and dispatch will be done accordingly.      
+                                            We plan to channelize our funds in procuring oxygen cylinders from abroad. For this we have already started coordination with international vendors.
+
                                             </span>
                                         </p>
                                     </li>
@@ -103,12 +110,13 @@
                                     <li class="accordion-item">
                                         <a class="accordion-title" href="javascript:void(0)">
                                             <i><img src="images/caret.png" /></i>
-                                            What is the procedure for obtaining the cylinders?  
+                                            How will funds be collected for the procurement?
                                         </a>
 
                                         <p class="accordion-content">
                                             <span>
-                                                Oxygen for Nepal will identify and come in contact with hospitals with high number of COVID-19 patients. Further, critically ill patients and frontline workers will also be considered upon request. According to their requirement, cylinders will then be provided on minimum cost.      
+                                            Oxygen for Nepal is a collaborative initiative which CREASION aims to take forward through the support from interested individual donors from Nepal and abroad. The total cost of one cylinder including the regulator, cannula, freight and distribution cost is $395.Our target is collection of at least $395,000 for a tentative procurement of at least 1000 cylinders.
+
                                             </span>
                                         </p>
                                     </li>
@@ -116,12 +124,14 @@
                                     <li class="accordion-item">
                                         <a class="accordion-title" href="javascript:void(0)">
                                             <i><img src="images/caret.png" /></i>
-                                            How many cylinders does Oxygen for Nepal plan to acquire?  
+                                            What is the mechanism for fund collection?
                                         </a>
 
                                         <p class="accordion-content">
                                             <span>
-                                                Our initial fundraising plans to acquire 5000 oxygen cylinders. Out of the 5000 cylinders, 2000 cylinders will be filled with gas. The remaining will be filled in coordination with oxygen manufacturers.      
+                                            We have partnered with banks for collection of funds from national donors. One can deposit any amount that they like to our bank and help the initiative. For the international diaspora, we have created a GoFundMe profile for collection of donations.
+
+                                            We assure you our reliability and transparency and can vouch that none of the funds will be mismanaged and 100% of it will be channelized for the procurement and dispatch of cylinders.
                                             </span>
                                         </p>
                                     </li>
@@ -129,15 +139,57 @@
                                     <li class="accordion-item">
                                         <a class="accordion-title" href="javascript:void(0)">
                                             <i><img src="images/caret.png" /></i>
-                                            Who are the main coordinators of the project?  
+                                            How is the dispatch planned?
                                         </a>
 
                                         <p class="accordion-content">
                                             <span>
-                                                Citizens Alliance Against COVID-19, a consortium of different organizations and volunteers and CREASION are implementing this project to overcome the shortage of oxygen cylinders in Nepal.       
+                                            Anybody in need of oxygen or oxygen cylinders can come in contact with us. However, one needs to submit a doctor’s prescription for verification of the need and urgency of the resource. Demand is high but since the supply is limited, we want to ensure that every distribution goes to the hospital or patient who needs it the most. 
+
                                             </span>
                                         </p>
                                     </li>
+
+                                    <li class="accordion-item">
+                                        <a class="accordion-title" href="javascript:void(0)">
+                                            <i><img src="images/caret.png" /></i>
+                                            Do we need to provide any charge for receiving the cylinders?
+                                        </a>
+
+                                        <p class="accordion-content">
+                                            <span>
+                                            Oxygen for Nepal does not charge any amount for its cylinders
+                                            </span>
+                                        </p>
+                                    </li>
+
+                                    <li class="accordion-item">
+                                        <a class="accordion-title" href="javascript:void(0)">
+                                            <i><img src="images/caret.png" /></i>
+                                            If my case is genuine and provide medical prescription, will I be guaranteed cylinders according to my need?
+                                        </a>
+
+                                        <p class="accordion-content">
+                                            <span>
+                                            We try our best to cater to everybody’s requirement. However, as we know that as cases are surging day by day, demand for oxygen is also rising rapidly. If requests exceed our supply stock, we cannot guarantee cylinders. In such a case, we do ensure that we connect your request to other groups and entities who might have possible leads for cylinders.
+                                            </span>
+                                        </p>
+                                    </li>
+
+                                    <li class="accordion-item">
+                                        <a class="accordion-title" href="javascript:void(0)">
+                                            <i><img src="images/caret.png" /></i>
+                                            Besides, procurement and distribution of Oxygen, are there any COVID-19 response initiatives planned by CREASION?
+                                        </a>
+
+                                        <p class="accordion-content">
+                                            <span>
+                                            Oxygen for Nepal has been planned analyzing the urgent need for oxygen in the current scenario. Besides this, we are also working for setting up Isolation Center and a COVID-19 Response Resource. Isolation center will be equipped with necessary health care facilities such as supplementary oxygen, health care workers, medicines and basic facilities for patients with mild and moderate symptoms that do not require critical treatment. The COVID-19 Response Resource will provide protective gear such as PPEs, medical masks, gloves, goggles, shoe and head cover, sanitizers, and disinfectants to frontline workers.
+
+                                            </span>
+                                        </p>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -148,29 +200,18 @@
 
         <section class="projects-impacts number-counter-section ptb-50">
             <div class="container">
-                <h4 class="heading-text inline text-center"><span>Our Expected</span>  Impacts</h4>
+                <h4 class="heading-text inline text-center"><span>Our </span>  Impacts</h4>
                 <div class="padding-wrap">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="pr-imp-card mtb-25">
-                                <img src="images/icon/rfc/money.svg" />
+                            <img src="images/icon/rfc/oxygen_cylinder.svg" />
                                 <h2>
-                                    <span class="odometer" data-count="50">00</span>
-                                    <span class="odo-sign">M+</span>
+                                    <span class="odometer" data-count="35">00</span>
+
                                 </h2>
 
-                                <h4 class="counter-subhead">Funds<label> Raised</label></h4>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="pr-imp-card mtb-25">
-                                <img src="images/icon/rfc/oxygen_cylinder.svg" />
-                                <h2>
-                                    <span class="odometer" data-count="5000 ">00</span>
-                                </h2>
-
-                                <h4 class="counter-subhead">oxygen cylinders<label> purchased</label></h4>
+                                <h4 class="counter-subhead">Cylinders <label>Distributed </label></h4>
                             </div>
                         </div>
 
@@ -178,10 +219,10 @@
                             <div class="pr-imp-card mtb-25">
                                 <img src="images/icon/rfc/oxygen_refill.svg" />
                                 <h2>
-                                    <span class="odometer" data-count="2000">00</span>
+                                    <span class="odometer" data-count="24 ">00</span>
                                 </h2>
 
-                                <h4 class="counter-subhead">oxygen cylinders <label>filled with gas</label></h4>
+                                <h4 class="counter-subhead">cylinders<label> Refilled </label></h4>
                             </div>
                         </div>
 
@@ -190,11 +231,11 @@
                             <div class="pr-imp-card mtb-25">
                                 <img src="images/icon/rfc/hospital.svg" />
                                 <h2>
-                                    <span class="odometer" data-count="20">00</span>
+                                    <span class="odometer" data-count="5000">00</span>
                                     <span class="odo-sign">+</span>
                                 </h2>
 
-                                <h4 class="counter-subhead">hospitals <label> assisted  </label></h4>
+                                <h4 class="counter-subhead">Requests  <label> Addressed   </label></h4>
                             </div>
                         </div>
                     </div>
@@ -204,5 +245,5 @@
 
 
 
-    
+
 @endsection
