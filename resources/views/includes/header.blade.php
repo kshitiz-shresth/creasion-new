@@ -207,10 +207,11 @@
                                 <li class="nav-item">
                                     <a href="{{ $item->url }}" class="nav-link">
                                         {{ $item->title }}
+                                        @if($item->url=='/oxygen-for-nepal' || $item->url =='/projects/oxygen-for-nepal')
+                                        <span class="blink-nav"></span>
+                                        @endif
                                     </a>
-                                    @if($item->url=='/oxygen-for-nepal' || $item->url =='/projects/oxygen-for-nepal')
-                                    <span class="blink-nav"></span>
-                                    @endif
+
                                     @if(!$item->children->isEmpty())
                                    <ul class="dropdown-menu project-dropdown iv-four-col">
                                         @foreach ($item->children as $subitem)
