@@ -4,7 +4,7 @@
     box-shadow: none;
     text-align: left;
     padding: 0;
-    
+
 }
 
 #donateMhead {
@@ -65,7 +65,7 @@ strong {
 }
 
 
-/*===========  Index Page 
+/*===========  Index Page
 =========*/
 
 .two-logos a.navbar-brand img:first-child {
@@ -156,7 +156,7 @@ ul.navbar-nav {
 nav.navbar.navbar-expand-md {
     padding: 0;
 }
- 
+
 #header {
     background: #fff;
 }
@@ -182,7 +182,7 @@ li.nav-item:hover .nav-link {
 
 
 li.nav-item:hover i:after{
-    color: #a6ce39;  
+    color: #a6ce39;
 }
 
 i.simple-icon.arrow-down:after {
@@ -327,7 +327,7 @@ li.nav-item:hover ul.dropdown-menu.menu-list {
 }
 
 ul.dropdown-menu.menu-list a {
-    font-family: 'ITC Avant Garde Gothic Std Book'; 
+    font-family: 'ITC Avant Garde Gothic Std Book';
     letter-spacing: 0.6px;
 }
 
@@ -353,7 +353,7 @@ ul.dropdown-menu.menu-list {
     position: absolute !important;
     width: 200px;
     right: 40px !important;
-    
+
 
 }
 
@@ -398,7 +398,7 @@ li.nav-item.nav-rec .nav-overlay {
     background: rgba(0,0,0,.3);
     z-index: 1;
 }
-    
+
 
 
 .creasion-banner {
@@ -675,7 +675,7 @@ a.close-btn {
 
 .video-slides .item {
   position: relative;
-} 
+}
 
 .video-slides .owl-nav {
     position: absolute;
@@ -988,7 +988,7 @@ span.odometer.odometer-auto-theme {
 .ic-text p {
     font-size: 13px;
 
-} 
+}
 
 .ic-text img {
     transition: all 0.3s ease-out;
@@ -1048,7 +1048,7 @@ span.odometer.odometer-auto-theme {
     margin-bottom: 20px;
     padding: 0 10px;
     position: relative;
-    
+
 }
 
 .fo-img {
@@ -1141,7 +1141,7 @@ section.suscribe-social {
 }
 
 .ss-card.card-big {
-  background: transparent;  
+  background: transparent;
   padding: 0;
   margin: 0;
   flex-grow: 2;
@@ -1403,7 +1403,7 @@ section.news-sec {
     font-family: 'ITC Avant Garde Gothic Std Book';
     font-size: 13px;
     text-decoration: underline;
-    bottom: 
+    bottom:
 }
 
 .instagram-box {
@@ -1474,20 +1474,20 @@ section.news-sec {
      .col-ec-2, .col-inter {
         width: 20%;
         background: #f7f7f7;
-      }    
+      }
 
       section.our-intervention .col-ec-2:nth-child(even) {
         background: #f2f2f2;
-      } 
+      }
 }
 
 
-/*===========  Index Page 
+/*===========  Index Page
 =========*/
 
 
 
-/*===========  VFC 
+/*===========  VFC
 =========*/
 
 .creasion-banner.inner-banner {
@@ -1525,7 +1525,24 @@ a.icon-hover.pet-a {
     display: inline;
     font-weight: 700;
 }
+.iabs-right figure img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border: 1px solid #f1f1f1;
+    padding: 5px;
+}
 
+.iabs-right figure {
+    display: inline;
+    float: left;
+    width: 150px;
+}
+
+.iabs-right figure a, .iabs-right figure {
+    font-size: 12px;
+    font-family: 'ITC Avant Garde Gothic Std Book';
+}
 .vi-text .heading-text span {
     display: inline;
 }
@@ -1708,12 +1725,12 @@ ul.sdg-logo-list.invert li {
 .ips-text-wrap a.icon-hover img {
     width: 0;
     display: inherit;
-    margin-top: 0px;    
+    margin-top: 0px;
 }
 
 .ips-text-wrap a:hover img {
     margin-top: -1px;
-}   
+}
 
 .ips-text-wrap a {
     color: #fff;
@@ -1732,9 +1749,9 @@ ul.sdg-logo-list.invert li {
 }
 /*
 .ips-text-wrap a:hover img {
-    
+
 }*/
- 
+
 
 .sw-img {
     position: relative;
@@ -1756,7 +1773,7 @@ ul.sdg-logo-list.invert li {
     transition: all 0.5s ease-out;
 }
 .sw-img img {
-    transition: all 0.8s ease-out;   
+    transition: all 0.8s ease-out;
     max-width: 100%;
     overflow:hidden;
 }
@@ -1929,12 +1946,12 @@ img.ip-logo-abs {
     top: 50%;
 }
 
-/*===========  VFC 
+/*===========  VFC
 =========*/
 
 
 
-/*===========  Waste Smart School 
+/*===========  Waste Smart School
 =========*/
 
 .bread-crumbs h2 {
@@ -1959,7 +1976,7 @@ section.inner-about-style2 p {
 }
 
 
-/*===========  Waste Smart School 
+/*===========  Waste Smart School
 =========*/
 
 section.reports-body {
@@ -2000,7 +2017,7 @@ section.reports-body {
     width: 100%;
     height: 0;
     background: rgba(0,0,0,0.3);
-    z-index: 1; 
+    z-index: 1;
     transition: all 0.2s ease-out;
 
 }
@@ -2073,7 +2090,7 @@ section.reports-body {
 
 img.width-inherit {
     max-width: inherit;
-    width: 100%;    
+    width: 100%;
 }
 
 .iabs-left.iabs-pad-right {
@@ -2210,7 +2227,7 @@ section.abt-banner-img:after {
 section.abt-wrap-up {
     background: #f0f0f2;
     padding: 50px 0;
-    
+
     position: relative;
 }
 
@@ -2354,7 +2371,7 @@ section.abt-mission {
 }
 
 .another-head a:hover:after {
-   width: 100px; 
+   width: 100px;
 }
 
 section.articles-banner {
@@ -2466,7 +2483,7 @@ section.ab-values {
     font-family: 'ITC Avant Garde Gothic Std Book';
     letter-spacing: 1px;
 }
- 
+
 a.search-btn {
     position: absolute;
     top: 50%;
@@ -2481,7 +2498,7 @@ a.search-btn i{
 
 .news-archive-date a.active {
     color: #51c3dc;
-}   
+}
 
 .news-archive-date a {
     margin: 0 15px;
@@ -2994,7 +3011,7 @@ ul.contact-info li i {
 
 section.contact-map {
     margin-top: 50px;
-}   
+}
 
 ul.contact-info li i:after {
     content: "";
@@ -3047,7 +3064,7 @@ form button {
     background: #fff;
     color: #716b70;
     cursor: pointer;
-    
+
 }
 
 form button:hover img {
@@ -3301,7 +3318,7 @@ section.donate-banner {
     border: 3px solid #14b6cb;
     border-radius: 50%;
     margin-right: 10px;
- 
+
 }
 
 .donate-bank h4 {
@@ -3351,7 +3368,7 @@ section.donate-banner {
 
 .donate-bank:hover {
     cursor: pointer;
-    
+
 }
 
 h4.bank-account {
@@ -3487,7 +3504,7 @@ h4.bank-account {
 
 .htv-head {
     margin-bottom: 30px;
-    text-align: center; 
+    text-align: center;
 }
 
 .htv-head h4{
@@ -3686,19 +3703,19 @@ section.team-creasion {
     border-left: 1px solid #03071926;
     margin-top: -1px;
     margin-left: -1px;
-   
+
 }
 
-/*.sec-priority .partner-logo:nth-child(3n+1) { 
-    border-left: 0; 
+/*.sec-priority .partner-logo:nth-child(3n+1) {
+    border-left: 0;
 }*/
 
-/*.sec-priority .partner-logo:nth-child(3n+1) { 
-    border-left: 0; 
+/*.sec-priority .partner-logo:nth-child(3n+1) {
+    border-left: 0;
 }
 
-.sec-priority .partner-logo:nth-child(3n) { 
-    border-right: 0; 
+.sec-priority .partner-logo:nth-child(3n) {
+    border-right: 0;
 }*/
 
 /*.sec-priority .partner-logo:nth-last-child(-n+3) {
@@ -3731,7 +3748,7 @@ section.team-creasion {
 
 .sec-priority .partner-logo:nth-last-child(4){
     border-bottom: 1px solid #03071926;
-} 
+}
 
 .milestne-sing-wrap {
     height: 100vh;
@@ -3923,7 +3940,7 @@ section.volunteerr-form h6 {
 .ig-slider .active .item{
   opacity:1;
   transform:scale(1.1);
-} 
+}
 
 
 .ig-slider .owl-item {
@@ -3986,7 +4003,7 @@ section.image-gallery .container {
      margin: -3px 0 0 0;
      transition: 0.4s;
      padding: 0 10px;
-     box-sizing: border-box;    
+     box-sizing: border-box;
      color: #fff;
 }
  .timeline__content-desc {
@@ -4183,7 +4200,7 @@ section.image-gallery .container {
 */
 section.res-partners {
     padding: 50px 0 20px;
-}   
+}
 
 .res-card {
     text-align: center;
@@ -4446,7 +4463,7 @@ section.words-from .container {
     text-align: center;
     padding-bottom: 40px;
 }
- 
+
 
 
 /*.cov-resp-names ul {
@@ -4496,7 +4513,7 @@ svg#Layer_1 {
     }
 
 
-  
+
 
 
   .description.active {
@@ -4791,7 +4808,7 @@ a.iread.active .iswb-name:after {
     width: 100%;
     height: 4px;
     position: absolute;
-    bottom: 0;    
+    bottom: 0;
 }
 
 /*WFC*/
