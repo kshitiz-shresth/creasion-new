@@ -136,14 +136,14 @@
                                         <div class="pr-pro">
                                             <div class="prp-sing">
                                                 <h2>
-                                                    <span class="odometer" data-count="{{ $count[0] }}"></span>
+                                                    <span class="odometer" data-count="{{ $count[1] }}"></span>
                                                 </h2>
                                                 <h4>Fundraising Target</h4>
                                             </div>
 
                                             <div class="prp-sing">
                                                 <h2>
-                                                    <span class="odometer" data-count="{{ $count[1] }}"></span>
+                                                    <span class="odometer" data-count="{{ $count[0] }}"></span>
                                                 </h2>
                                                 <h4>Amount Raised</h4>
                                             </div>
