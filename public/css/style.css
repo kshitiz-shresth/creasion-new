@@ -1833,6 +1833,40 @@ ul.sdg-logo-list.invert li {
     display: inline;
 }
 
+.pr-pro {
+    display: flex;
+}
+
+.prp-sing h4 {
+    font-size: 16px;
+    max-width: 99px;
+    text-align: center;
+    font-family: 'ITC Avant Garde Gothic Std Book';
+    margin: auto;
+}
+
+.prp-sing {
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.prp-sing:first-child::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 1px;
+    height: 65%;
+    background: #716b70;
+}
+
+h5.prp-label {
+    font-size: 18px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
 .pr-imp-card {
     text-align: center;
     margin: 25px 0;
