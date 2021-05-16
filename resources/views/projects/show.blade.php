@@ -206,7 +206,7 @@
                                                         <span class="odo-sign">{{ $item->subScript }}</span>
                                                     @endif
                                                 </h2>
-                                                <h4>Acieved</h4>
+                                                <h4>Achieved</h4>
                                             </div>
                                         </div>
 
