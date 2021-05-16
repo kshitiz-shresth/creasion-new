@@ -70,7 +70,7 @@
                         <div class="prso">
                             <div class="prso-sing">
                                 <h5>The Problem</h5>
-                                <img src="./css/problem.svg" alt="">
+                                <img src="/css/problem.svg" alt="">
 
                                 <p>
                                     Nepal's Test Positivity Rate is almost 50%, the world's highest by now.Daily death
@@ -81,7 +81,7 @@
 
                             <div class="prso-sing">
                                 <h5>The Solution </h5>
-                                <img src="./css/solution.svg" alt="">
+                                <img src="/css/solution.svg" alt="">
 
                                 <p>
                                     CREASION's Covid-19 Response has initiated multiple solutions in collaboration
@@ -96,22 +96,22 @@
                         <h5>The Interventions</h5>
                         <div class="tin-wrap">
                             <div class="tinw-sing">
-                                <img src="./css/oxy-plant.svg" alt="">
+                                <img src="/css/oxy-plant.svg" alt="">
                                 <p>Oxygen Plants</p>
                             </div>
 
                             <div class="tinw-sing">
-                                <img src="./css/oxy-clin.svg" alt="">
+                                <img src="/css/oxy-clin.svg" alt="">
                                 <p>Oxygen Cylinders and Concentrators</p>
                             </div>
 
                             <div class="tinw-sing">
-                                <img src="./css/isolation.svg" alt="">
+                                <img src="/css/isolation.svg" alt="">
                                 <p> Isolation Center</p>
                             </div>
 
                             <div class="tinw-sing">
-                                <img src="./css/covid-saftey.svg" alt="">
+                                <img src="/css/covid-saftey.svg" alt="">
                                 <p>Covid-19 Saftey Resources</p>
                             </div>
                         </div>
