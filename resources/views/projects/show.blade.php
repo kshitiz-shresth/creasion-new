@@ -96,23 +96,19 @@
         </section>
     @endif
 
-    @if (count(json_decode($project->our_impacts)) > 0)
+    @if (count($our_impacts) > 0)
         <section class="projects-impacts number-counter-section ptb-50">
             <div class="container">
-                @if($project->slug!='oxygen-for-nepal')
                 <h4 class="heading-text inline text-center"><span>Our</span> Impacts</h4>
-                @else
-                <h4 class="heading-text inline text-center">Progress</h4>
-                @endif
 
                 <div class="padding-wrap">
                     <div class="row" style="justify-content: center; ">
-                        @if (count(json_decode($project->our_impacts)) > 4)
+                        @if (count($our_impacts) > 4)
                             @php $col = 4; @endphp
                         @else
                             @php $col = 3; @endphp
                         @endif
-                        @foreach (json_decode($project->our_impacts) as $item)
+                        @foreach ($our_impacts as $item)
 
                             <div class="col-md-{{ $col }} col-sm-6">
                                 <div class="pr-imp-card">
@@ -137,19 +133,93 @@
                                             <div class="prp-sing">
                                                 <h2>
                                                     <span class="odometer" data-count="{{ $count[1] }}"></span>
+                                                    @if ($item->subScript)
+                                                        <span class="odo-sign">{{ $item->subScript }}</span>
+                                                    @endif
                                                 </h2>
-                                                <h4>Fundraising Target</h4>
+                                                <h4>Target</h4>
                                             </div>
 
                                             <div class="prp-sing">
                                                 <h2>
                                                     <span class="odometer" data-count="{{ $count[0] }}"></span>
+                                                    @if ($item->subScript)
+                                                        <span class="odo-sign">{{ $item->subScript }}</span>
+                                                    @endif
                                                 </h2>
-                                                <h4>Amount Raised</h4>
+                                                <h4>Acieved</h4>
                                             </div>
                                         </div>
 
-                                        <h5 class="prp-label">Fund raising</h5>
+                                        <h5 class="prp-label">{{ $item->title }}</h5>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if (count($progress) > 0)
+        <section class="projects-impacts number-counter-section ptb-50">
+            <div class="container">
+                <h4 class="heading-text inline text-center">Progress</h4>
+
+                <div class="padding-wrap">
+                    <div class="row" style="justify-content: center; ">
+                        @if (count($progress) > 4)
+                            @php $col = 4; @endphp
+                        @else
+                            @php $col = 3; @endphp
+                        @endif
+                        @foreach ($progress as $item)
+
+                            <div class="col-md-{{ $col }} col-sm-6">
+                                <div class="pr-imp-card">
+                                    @php
+                                        $count = explode('@', $item->totalCount)[0];
+                                        $count = explode('/', $count);
+                                    @endphp
+                                    @if (!isset($count[1]))
+                                        <img src="/storage/{{ $item->iconLocation }}">
+                                        <h2>
+                                            <span class="odometer" data-count="{{ $item->totalCount }}">00</span>
+                                            @if ($item->subScript)
+                                                <span class="odo-sign">{{ $item->subScript }}</span>
+                                            @endif
+                                        </h2>
+
+                                        <h4 class="counter-subhead">{{ $item->title }}</h4>
+                                    @else
+                                        <img src="/storage/{{ $item->iconLocation }}">
+
+
+                                        <div class="pr-pro">
+                                            <div class="prp-sing">
+                                                <h2>
+                                                    <span class="odometer" data-count="{{ $count[1] }}"></span>
+                                                    @if ($item->subScript)
+                                                        <span class="odo-sign">{{ $item->subScript }}</span>
+                                                    @endif
+                                                </h2>
+                                                <h4>Target</h4>
+                                            </div>
+
+                                            <div class="prp-sing">
+                                                <h2>
+                                                    <span class="odometer" data-count="{{ $count[0] }}"></span>
+                                                    @if ($item->subScript)
+                                                        <span class="odo-sign">{{ $item->subScript }}</span>
+                                                    @endif
+                                                </h2>
+                                                <h4>Acieved</h4>
+                                            </div>
+                                        </div>
+
+                                        <h5 class="prp-label">{{ $item->title }}</h5>
                                     @endif
                                 </div>
                             </div>
@@ -214,7 +284,8 @@
 
                                                                 <div class="idi-num">
                                                                     <h4>{{ $counterItem->count }}
-                                                                        <span>{{ $counterItem->subscript }}</span></h4>
+                                                                        <span>{{ $counterItem->subscript }}</span>
+                                                                    </h4>
                                                                     <p>{{ $counterItem->title }}</p>
                                                                 </div>
                                                             </div>
@@ -412,7 +483,7 @@
 @endsection
 
 @section('js')
-<script>
+    <script>
 
-</script>
+    </script>
 @endsection
