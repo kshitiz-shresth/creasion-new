@@ -54078,7 +54078,7 @@ var render = function() {
                               }
                             ],
                             staticClass: "form-control",
-                            attrs: { type: "number" },
+                            attrs: { type: "text" },
                             domProps: { value: impactItem.totalCount },
                             on: {
                               input: function($event) {

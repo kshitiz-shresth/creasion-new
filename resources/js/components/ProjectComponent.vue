@@ -8,10 +8,10 @@
                 <label class="control-label" for="name">Title</label>
                 <input type="text" class="form-control" v-model="title" required>
             </div>
-            
+
             <!-- Menu Image -->
             <div class="form-group  col-md-12 ">
-                                                
+
                  <label class="control-label" for="name">Menu Image <small>(upload JPEG [recommended])</small></label>
                     <div v-if="menuImageLocation" data-field-name="image">
                         <!-- <a href="#" class="voyager-x" style="position:absolute;"></a> -->
@@ -22,7 +22,7 @@
 
             <!-- Cover Image -->
             <div class="form-group  col-md-12 ">
-                                                
+
                  <label class="control-label" for="name">Cover <small>(upload JPEG [recommended])</small></label>
                     <div v-if="coverImageLocation" data-field-name="image">
                         <!-- <a href="#" class="voyager-x" style="position:absolute;"></a> -->
@@ -80,13 +80,13 @@
                     </div>
                    <div class="form-group col-md-12">
                         <a href="#" class="btn btn-default" v-on:click.prevent="addFaq()">Add</a>
-                    </div> 
+                    </div>
             <!--  End of FAQs-->
-            
+
             <!-- Our Impacts Field -->
                 <div class="form-group h4 col-md-12">
                     <strong>Our Impacts</strong>
-                </div> 
+                </div>
                 <div class="container-fluid">
                 <table class="table table-bordered">
                     <thead>
@@ -107,11 +107,11 @@
                                     <img :src="'/storage/'+impactItem.iconLocation" style="max-width:200px; height:auto; clear:both; display:block; padding:2px; border:1px solid #ddd; margin-bottom:10px;">
                                 </div>
                                 <input type="file" v-on:change="changeImageOfOurImpact(impactIndex, $event)"></td>
-                            <td class="col-md-3"><input v-model="impactItem.totalCount" class="form-control" type="number"></td>
+                            <td class="col-md-3"><input v-model="impactItem.totalCount" class="form-control" type="text"></td>
                             <td class="col-md-1"><input class="form-control" type="text" v-model="impactItem.subScript"></td>
                             <td class="col-md-1"><button type="button" @click="deleteOurImpacts(impactIndex)" class="btn btn-danger"><span class="voyager-trash"></span></button></td>
                         </tr>
-                     
+
                     </tbody>
                 </table>
                 </div>
@@ -132,7 +132,7 @@
                                 <th>Image Number</th>
                                 <th>Image</th>
                                 <th>Delete</th>
-                            </tr> 
+                            </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(sdgsItem,sdgsIndex) in sdgs" :key="sdgsIndex" class="d-flex">
@@ -141,11 +141,11 @@
                                 <td><button type="button" @click="deleteSdgs(sdgsIndex)" class="btn btn-danger"><span class="voyager-trash"></span></button></td>
                             </tr>
                         </tbody>
-                    </table>    
-                </div> 
+                    </table>
+                </div>
                 <div class="form-group col-md-12">
                         <a href="#" class="btn btn-default" v-on:click.prevent="addSdgs()">Add</a>
-                </div>   
+                </div>
 
             <!-- Slider Field  -->
                 <div class="form-group h4 col-md-12">
@@ -156,14 +156,14 @@
                         <label class="control-label" for="name">Unique Images ID <small>(<a href="/admin/multiple-images" target="_blank">click here</a> to add or see unique images id)</small></label>
                         <input @keydown.enter="generateImages" type="text" class="form-control" v-model="sliderID">
                         <a href="#" class="form-control btn btn-info" v-on:click.prevent="generateImages()">Check Images</a>
-                    </div> 
-                    
+                    </div>
+
                 </div>
                 <div class="container-fluid" style="display:flex" v-if="generatedImages">
                     <div v-for="(generatedImagesItem,generatedImagesIndex) in generatedImages" :key="generatedImagesIndex">
                         <img :src="`/storage/${generatedImagesItem}`" style="max-width:140px; height:auto; clear:both; padding:2px; border:1px solid #ddd; margin-bottom:10px;">
                     </div>
-                </div>   
+                </div>
 
                 <!-- Testimonial Section  -->
                 <div class="form-group h4 col-md-12">
@@ -197,7 +197,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                 </div>
                 <div class="form-group col-md-12">
                         <a href="#" class="btn btn-default" v-on:click.prevent="addTestimonial()">Add</a>
@@ -234,7 +234,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                 </div>
                 <div class="form-group col-md-12">
                         <a href="#" class="btn btn-default" v-on:click.prevent="addSpotlight()">Add</a>
@@ -274,7 +274,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                 </div>
                 <div class="form-group col-md-12">
                         <a href="#" class="btn btn-default" v-on:click.prevent="addSubProjects()">Add</a>
@@ -401,7 +401,7 @@ export default {
             this.menuImageLocation = this.content.menuImage;
             this.buttonTitle = this.content.button_title;
             this.buttonContent = this.content.button_content;
-            
+
             // set method to put for editing which will be forward to controller after
             this.method = 'put';
         }
@@ -483,7 +483,7 @@ export default {
             else{
                 console.log('Empty ID');
             }
-            
+
         },
         // imageUpload
         changeImage(event){
@@ -514,7 +514,7 @@ export default {
         },
 
         addOurImpacts(){
-            this.ourImpacts.push(                
+            this.ourImpacts.push(
                         {
                             title:'',
                             iconImage:'',
