@@ -173,7 +173,7 @@
                         @if (count($progress) > 4)
                             @php $col = 4; @endphp
                         @else
-                            @php $col = 3; @endphp
+                            @php $col = 4; @endphp
                         @endif
                         @foreach ($progress as $item)
 
