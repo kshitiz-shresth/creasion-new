@@ -99,7 +99,11 @@
     @if (count(json_decode($project->our_impacts)) > 0)
         <section class="projects-impacts number-counter-section ptb-50">
             <div class="container">
+                @if($project->slug!='oxygen-for-nepal')
                 <h4 class="heading-text inline text-center"><span>Our</span> Impacts</h4>
+                @else
+                <h4 class="heading-text inline text-center">Progress</h4>
+                @endif
 
                 <div class="padding-wrap">
                     <div class="row" style="justify-content: center; ">
