@@ -196,7 +196,7 @@
                                                         <span class="odo-sign">{{ $item->subScript }}</span>
                                                     @endif
                                                 </h2>
-                                                <h4>Target</h4>
+                                                <h4>Goal</h4>
                                             </div>
 
                                             <div class="prp-sing">
