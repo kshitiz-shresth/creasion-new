@@ -34,6 +34,10 @@ Route::get('/trial',function(){
     return view('welcome');
 });
 
+Route::get('/oxygenfornepal',function(){
+    return redirect('/projects/oxygen-for-nepal');
+});
+
 Route::get('/generateImages', [MultipleImagesController::class, 'generateImages']);
 
 Route::get('/generateSubProject', [MultipleImagesController::class, 'generateSubProject']);
