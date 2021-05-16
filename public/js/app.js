@@ -3764,6 +3764,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // for CK editor
  // for Axios
 
@@ -3803,6 +3836,11 @@ __webpack_require__.r(__webpack_exports__);
         subScript: '',
         iconLocation: ''
       }],
+      partners: [{
+        title: '',
+        image: '',
+        imageLocation: ''
+      }],
       sdgs: [{
         imageNumber: ''
       }],
@@ -3834,6 +3872,10 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.content.our_impacts) {
         this.ourImpacts = JSON.parse(this.content.our_impacts);
+      }
+
+      if (this.content.partners) {
+        this.partners = JSON.parse(this.content.partners);
       }
 
       if (this.content.sdgs) {
@@ -3896,11 +3938,15 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('spotlight', JSON.stringify(this.spotlight));
       formData.append('subProjects', JSON.stringify(this.subProjects));
       formData.append('ourImpacts', JSON.stringify(this.ourImpacts));
+      formData.append('partners', JSON.stringify(this.partners));
       formData.append('sdgs', JSON.stringify(this.sdgs));
       formData.append('buttonTitle', this.buttonTitle);
       formData.append('buttonContent', this.buttonContent);
       this.ourImpacts.forEach(function (item, index) {
         formData.append("ourImpactIconImage[".concat(index, "]"), item.iconImage);
+      });
+      this.partners.forEach(function (item, index) {
+        formData.append("partnerImage[".concat(index, "]"), item.image);
       });
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/admin/projects', formData, config).then(function (response) {
         toastr.success('Form Created');
@@ -3949,6 +3995,10 @@ __webpack_require__.r(__webpack_exports__);
       console.log(event.target.files[0]);
       this.ourImpacts[impactIndex].iconImage = event.target.files[0];
     },
+    // imageUpload of Partners
+    changeImageOfPartner: function changeImageOfPartner(partnerIndex, event) {
+      this.partners[partnerIndex].image = event.target.files[0];
+    },
     // FAQ adding function
     addFaq: function addFaq() {
       this.faqs.push({
@@ -3969,6 +4019,13 @@ __webpack_require__.r(__webpack_exports__);
         iconLocation: ''
       });
     },
+    addPartners: function addPartners() {
+      this.partners.push({
+        title: '',
+        partnerImage: '',
+        imageLocation: ''
+      });
+    },
     // Our Contributions adding and deleting function
     addSdgs: function addSdgs() {
       this.sdgs.push({
@@ -3981,6 +4038,9 @@ __webpack_require__.r(__webpack_exports__);
     // FAQ deleting function
     deleteOurImpacts: function deleteOurImpacts(impactIndex) {
       this.ourImpacts.splice(impactIndex, 1);
+    },
+    deletePartner: function deletePartner(partnerIndex) {
+      this.partners.splice(partnerIndex, 1);
     },
     addTestimonial: function addTestimonial() {
       this.testimonial.push({
@@ -54171,6 +54231,125 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
+                  _vm._l(_vm.partners, function(partnerItem, partnerIndex) {
+                    return _c(
+                      "tr",
+                      { key: partnerIndex, staticClass: "d-flex" },
+                      [
+                        _c("td", { staticClass: "col-md-6" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: partnerItem.title,
+                                expression: "partnerItem.title"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: { type: "text", required: "" },
+                            domProps: { value: partnerItem.title },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  partnerItem,
+                                  "title",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "col-md-5" }, [
+                          partnerItem.imageLocation
+                            ? _c(
+                                "div",
+                                { attrs: { "data-field-name": "image" } },
+                                [
+                                  _c("img", {
+                                    staticStyle: {
+                                      "max-width": "200px",
+                                      height: "auto",
+                                      clear: "both",
+                                      display: "block",
+                                      padding: "2px",
+                                      border: "1px solid #ddd",
+                                      "margin-bottom": "10px"
+                                    },
+                                    attrs: {
+                                      src:
+                                        "/storage/" + partnerItem.imageLocation
+                                    }
+                                  })
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "file" },
+                            on: {
+                              change: function($event) {
+                                return _vm.changeImageOfPartner(
+                                  partnerIndex,
+                                  $event
+                                )
+                              }
+                            }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "col-md-1" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-danger",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.deletePartner(partnerIndex)
+                                }
+                              }
+                            },
+                            [_c("span", { staticClass: "voyager-trash" })]
+                          )
+                        ])
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group col-md-12" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-default",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.addPartners()
+                    }
+                  }
+                },
+                [_vm._v("Add")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "container-fluid" }, [
+              _c("table", { staticClass: "table table-bordered" }, [
+                _vm._m(9),
+                _vm._v(" "),
+                _c(
+                  "tbody",
                   _vm._l(_vm.sdgs, function(sdgsItem, sdgsIndex) {
                     return _c("tr", { key: sdgsIndex, staticClass: "d-flex" }, [
                       _c("td", [
@@ -54264,11 +54443,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(8),
+            _vm._m(10),
             _vm._v(" "),
             _c("div", { staticClass: "row container-fluid" }, [
               _c("div", { staticClass: "form-group col-md-4" }, [
-                _vm._m(9),
+                _vm._m(11),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -54347,11 +54526,11 @@ var render = function() {
                 )
               : _vm._e(),
             _vm._v(" "),
-            _vm._m(10),
+            _vm._m(12),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c("table", { staticClass: "table table-bordered" }, [
-                _vm._m(11),
+                _vm._m(13),
                 _vm._v(" "),
                 _c(
                   "tbody",
@@ -54445,7 +54624,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._m(12, true),
+                        _vm._m(14, true),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -54532,14 +54711,14 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(13),
+            _vm._m(15),
             _vm._v(" "),
             _c("div", { staticClass: "container-fluid" }, [
               _c(
                 "table",
                 { staticClass: "table table-bordered" },
                 [
-                  _vm._m(14),
+                  _vm._m(16),
                   _vm._v(" "),
                   _c(
                     "draggable",
@@ -54616,7 +54795,7 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("td", [
-                          _vm._m(15, true),
+                          _vm._m(17, true),
                           _vm._v(" "),
                           _c("input", {
                             directives: [
@@ -54705,13 +54884,13 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(16),
+            _vm._m(18),
             _vm._v(" "),
             _c(
               "div",
               { staticClass: "form-group col-md-6" },
               [
-                _vm._m(17),
+                _vm._m(19),
                 _vm._v(" "),
                 _c("ckeditor", {
                   attrs: { editor: _vm.editor, config: _vm.editorConfig },
@@ -54732,7 +54911,7 @@ var render = function() {
                 "table",
                 { staticClass: "table table-bordered" },
                 [
-                  _vm._m(18),
+                  _vm._m(20),
                   _vm._v(" "),
                   _c(
                     "draggable",
@@ -54950,6 +55129,31 @@ var staticRenderFns = [
         _c("th", { staticClass: "col-md-3" }, [_vm._v("Total Count")]),
         _vm._v(" "),
         _c("th", { staticClass: "col-md-1" }, [_vm._v("Subscript")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "col-md-1" }, [_vm._v("Delete")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group h4 col-md-12" }, [
+      _c("strong", [_vm._v("Partners")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticClass: "d-flex" }, [
+        _c("th", { staticClass: "col-md-6" }, [_vm._v("Title")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "col-md-5" }, [
+          _vm._v("Image "),
+          _c("small", [_vm._v("(please upload .png/.jpg image)")])
+        ]),
         _vm._v(" "),
         _c("th", { staticClass: "col-md-1" }, [_vm._v("Delete")])
       ])

@@ -120,6 +120,39 @@
                 </div>
             <!-- Our Impacts Field -->
 
+            <!-- Partners Field -->
+            <div class="form-group h4 col-md-12">
+                <strong>Partners</strong>
+            </div>
+            <div class="container-fluid">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr class="d-flex">
+                        <th class="col-md-6">Title</th>
+                        <th class="col-md-5">Image <small>(please upload .png/.jpg image)</small></th>
+                        <th class="col-md-1">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(partnerItem,partnerIndex) in partners" :key="partnerIndex" class="d-flex">
+                        <td class="col-md-6"><input type="text" class="form-control" v-model="partnerItem.title" required /></td>
+                        <td class="col-md-5">
+                            <div v-if="partnerItem.imageLocation" data-field-name="image">
+                                <!-- <a href="#" class="voyager-x" style="position:absolute;"></a> -->
+                                <img :src="'/storage/'+partnerItem.imageLocation" style="max-width:200px; height:auto; clear:both; display:block; padding:2px; border:1px solid #ddd; margin-bottom:10px;">
+                            </div>
+                            <input type="file" v-on:change="changeImageOfPartner(partnerIndex, $event)"></td>
+                        <td class="col-md-1"><button type="button" @click="deletePartner(partnerIndex)" class="btn btn-danger"><span class="voyager-trash"></span></button></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group col-md-12">
+                <a href="#" class="btn btn-default" v-on:click.prevent="addPartners()">Add</a>
+            </div>
+            <!-- Partners Field -->
+
             <!-- Our Contribution to global goals Field -->
                 <div class="form-group h4 col-md-12">
                     <strong>OUR CONTRIBUTION TO GLOBAL GOALS</strong>
@@ -344,6 +377,13 @@ export default {
                     iconLocation:''
                 }
             ],
+            partners: [
+                {
+                    title:'',
+                    image:'',
+                    imageLocation:''
+                }
+            ],
             sdgs: [
                 {
                     imageNumber: '',
@@ -381,6 +421,9 @@ export default {
             this.faqs = JSON.parse(this.content.faqs);
             if(this.content.our_impacts){
                 this.ourImpacts = JSON.parse(this.content.our_impacts);
+            }
+            if(this.content.partners){
+                this.partners = JSON.parse(this.content.partners);
             }
             if(this.content.sdgs){
                 this.sdgs = JSON.parse(this.content.sdgs);
@@ -439,12 +482,16 @@ export default {
             formData.append('spotlight',JSON.stringify(this.spotlight));
             formData.append('subProjects',JSON.stringify(this.subProjects));
             formData.append('ourImpacts',JSON.stringify(this.ourImpacts));
+            formData.append('partners',JSON.stringify(this.partners));
             formData.append('sdgs',JSON.stringify(this.sdgs));
             formData.append('buttonTitle',this.buttonTitle);
             formData.append('buttonContent',this.buttonContent);
 
             this.ourImpacts.forEach((item,index) => {
                 formData.append(`ourImpactIconImage[${index}]`,item.iconImage);
+            });
+            this.partners.forEach((item,index) => {
+                formData.append(`partnerImage[${index}]`,item.image);
             });
             axios.post('/admin/projects',formData,config).then(
                 function (response){
@@ -503,6 +550,12 @@ export default {
             this.ourImpacts[impactIndex].iconImage = event.target.files[0];
         },
 
+        // imageUpload of Partners
+        changeImageOfPartner(partnerIndex,event){
+            this.partners[partnerIndex].image = event.target.files[0];
+        },
+
+
         // FAQ adding function
         addFaq(){
             this.faqs.push({question:'',answer:''});
@@ -523,6 +576,14 @@ export default {
                             iconLocation: '',
                         });
         },
+        addPartners(){
+            this.partners.push(
+                {
+                    title:'',
+                    partnerImage:'',
+                    imageLocation:'',
+                });
+        },
 
         // Our Contributions adding and deleting function
         addSdgs(){
@@ -535,6 +596,10 @@ export default {
         // FAQ deleting function
         deleteOurImpacts(impactIndex){
             this.ourImpacts.splice(impactIndex,1);
+        },
+
+        deletePartner(partnerIndex){
+            this.partners.splice(partnerIndex,1);
         },
 
         addTestimonial(){

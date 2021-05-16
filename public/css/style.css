@@ -37,6 +37,59 @@ strong {
     font-family: 'ITC Avant Garde Gothic Std Demi';
 }
 
+.prso-sing img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.prso {
+    display: flex;
+}
+
+.prso-sing {
+    width: 50%;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.prso-sing h5, .lkint h5 {
+    font-family: 'ITC Avant Garde Gothic Std Medium';
+    font-size: 17px;
+    text-transform: uppercase;
+
+}
+
+.tinw-sing {
+    display: flex;
+    align-items: center;
+    margin:20px 0;
+}
+
+.tinw-sing p {
+    line-height: 1.2;
+    margin-left: 10px;
+}
+
+.tinw-sing img {
+    background: #14b6cb;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tinw-sing:nth-child(2) {
+    margin-bottom: 35px;
+}
+
+.tinw-sing:nth-child(2), .tinw-sing:nth-child(3) {
+    margin-left: 80px;
+}
+
  .inner-project-title h4 {
      font-size: 32px;
     line-height: 1.4;

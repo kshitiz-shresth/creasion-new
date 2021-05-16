@@ -62,6 +62,65 @@
         </div>
     </section>
 
+    @if($project->slug=='oxygen-for-nepal')
+        <section class="lkint">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="prso">
+                            <div class="prso-sing">
+                                <h5>The Problem</h5>
+                                <img src="./css/problem.svg" alt="">
+
+                                <p>
+                                    Nepal's Test Positivity Rate is almost 50%, the world's highest by now.Daily death
+                                    count is raising but with the limitations of essential commodities such as oxygen, the
+                                    crisis is worsening.
+                                </p>
+                            </div>
+
+                            <div class="prso-sing">
+                                <h5>The Solution </h5>
+                                <img src="./css/solution.svg" alt="">
+
+                                <p>
+                                    CREASION's Covid-19 Response has initiated multiple solutions in collaboration
+                                    with different partners to fill the supply and demand gap of essential infrastructures.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>The Interventions</h5>
+                        <div class="tin-wrap">
+                            <div class="tinw-sing">
+                                <img src="./css/oxy-plant.svg" alt="">
+                                <p>Oxygen Plants</p>
+                            </div>
+
+                            <div class="tinw-sing">
+                                <img src="./css/oxy-clin.svg" alt="">
+                                <p>Oxygen Cylinders and Concentrators</p>
+                            </div>
+
+                            <div class="tinw-sing">
+                                <img src="./css/isolation.svg" alt="">
+                                <p> Isolation Center</p>
+                            </div>
+
+                            <div class="tinw-sing">
+                                <img src="./css/covid-saftey.svg" alt="">
+                                <p>Covid-19 Saftey Resources</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    @endif
     @if (count(json_decode($project->faqs)) > 0)
         <section class="home-about ptb-70 ">
             <div class="container">

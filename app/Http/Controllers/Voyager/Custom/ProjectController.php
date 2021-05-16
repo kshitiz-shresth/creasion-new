@@ -389,7 +389,7 @@ class ProjectController extends VoyagerBaseController
                 if ($item->iconLocation) {
                     $impactIconFinalLocation = $item->iconLocation; // Set final location with existing location.
                 }
-        
+
                     // incase someone choosed file from form.
                 if($impactIcon){
                     // delete previous file only if it is PUT method and if file existed previously
@@ -398,7 +398,7 @@ class ProjectController extends VoyagerBaseController
                             unlink(public_path('/storage/' . $impactIconFinalLocation));
                         }
                     }
-                    
+
                     // getting title of Icon Image
                     $impactIconTitle = $item->title;
                     $impactIconSlug = Str::slug($impactIconTitle);
@@ -421,6 +421,59 @@ class ProjectController extends VoyagerBaseController
                 $updatedImpactIcon[$impactIndex]['iconImage'] = '';
 
                 $impactIndex++;
+
+            }
+        }
+
+
+        $partnerIndex = 0;
+        $partnerImage = $request->partnerImage;
+
+        // initializing object with empty array.
+        $updatedPartnerImages = [];
+        if(count(json_decode($request->partners))>0){
+            foreach(json_decode($request->partners) as $item){
+
+                    // getting icon one by one
+                $partnerImageOneByOne =  $partnerImage[$partnerIndex];
+
+                    // initializing impactIconFinalLocation for line 399~
+                $partnerImageFinalLocation = null;
+
+                    // if iconLocation is there in VUE
+                if ($item->imageLocation) {
+                    $partnerImageFinalLocation = $item->imageLocation; // Set final location with existing location.
+                }
+
+                    // incase someone choosed file from form.
+                if($partnerImageOneByOne){
+                    // delete previous file only if it is PUT method and if file existed previously
+                    if($partnerImageFinalLocation){
+                        if (file_exists(public_path('/storage/' . $partnerImageFinalLocation))) {
+                            unlink(public_path('/storage/' . $partnerImageFinalLocation));
+                        }
+                    }
+
+                    // getting title of Icon Image
+                    $partnerTitle = $item->title;
+                    $partnerTitleSlug = Str::slug($partnerTitle);
+                    $partnerImageLocation = 'projects/'.$projectSlug.'/partners/';
+                    $partnerImageName = $partnerTitleSlug.'.'.$partnerImageOneByOne->getClientOriginalExtension();
+                    $partnerImageOneByOne->storeAs('public/'.$partnerImageLocation,$partnerImageName);
+                    $partnerImageFinalLocation = $partnerImageLocation.$partnerImageName;
+                }
+
+                // making same type of object for vue js
+                $updatedPartnerImages[$partnerIndex]['title'] = $item->title;
+                if($partnerImageFinalLocation){
+                    $updatedPartnerImages[$partnerIndex]['imageLocation'] = $partnerImageFinalLocation;
+                }
+                else{
+                    $updatedPartnerImages[$partnerIndex]['imageLocation'] = '';
+                }
+                $updatedPartnerImages[$partnerIndex]['image'] = '';
+
+                $partnerIndex++;
 
             }
         }
@@ -463,6 +516,7 @@ class ProjectController extends VoyagerBaseController
             $project->sub_project_title = $request->sub_project_title;
             $project->menuImage = $menuImageLocation;
             $project->our_impacts = json_encode($updatedImpactIcon);
+            $project->partners = json_encode($updatedPartnerImages);
             $project->button_title = $request->buttonTitle;
             $project->button_content = $request->buttonContent;
             $project->save();
@@ -494,6 +548,7 @@ class ProjectController extends VoyagerBaseController
             $project->faqs = $request->faqs;
             $project->slug = $projectSlug;
             $project->our_impacts = json_encode($updatedImpactIcon);
+            $project->partners = json_encode($updatedPartnerImages);
             $project->button_title = $request->buttonTitle;
             $project->button_content = $request->buttonContent;
             $project->update();
