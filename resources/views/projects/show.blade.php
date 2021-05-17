@@ -158,7 +158,7 @@
     @if (count($our_impacts) > 0)
         <section class="projects-impacts number-counter-section ptb-50">
             <div class="container">
-                <h4 class="heading-text inline text-center"><span>Our</span> Impacts</h4>
+                <h4 class="heading-text inline text-center"><span>Impacts</span></h4>
 
                 <div class="padding-wrap">
                     <div class="row" style="justify-content: center; ">
