@@ -1947,7 +1947,46 @@ section.inner-projects {
     background: #fff;
     margin: 15px 0;
 }
+section.lkint {
+    margin: 15px 0;
+}
 
+section.lkint > .container > .row{
+    background: #f7f7f7;
+    padding: 60px 0;
+}
+
+section.oxy-part {
+    background: #f7f7f7;
+    padding: 40px 0;
+    margin: 40px 0;
+}
+
+.op-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.op-sing {
+    width: 190px;
+    margin: 15px 0;
+    margin-right: 30px;
+}
+
+
+.op-sing img {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+}
+
+.op-sing h4 {
+    font-family: 'ITC Avant Garde Gothic Std Medium';
+    font-size: 16px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
 .ip-card-text a {
     font-family: 'ITC Avant Garde Gothic Std Book';
     text-transform: uppercase;

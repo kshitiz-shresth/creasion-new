@@ -291,6 +291,22 @@
     @endif
 
 
+    @if(isset($project->partners) && count(json_decode($project->partners)) > 0 )
+    <section class="oxy-part">
+        <div class="container">
+            <h3 class="heading-text inline pb-15"><span></span> Partners</h3>
+
+            <div class="op-wrap">
+                @foreach (json_decode($project->partners) as $item)
+                <div class="op-sing">
+                    <img src="{{ '/storage/'.$item->imageLocation }}" alt="">
+                    <h4>{{ $item->title }}</h4>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
 
     @if ($subProjects)
         <section class="inner-projects ptb-70">
