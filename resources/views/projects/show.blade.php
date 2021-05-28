@@ -307,7 +307,7 @@
         </div>
     </section>
     @endif
-
+    @if(isset($subProjects[0]->title_image) && isset($subProjects[0]->title))
     @if ($subProjects)
         <section class="inner-projects ptb-70">
             <div class="container">
@@ -316,142 +316,141 @@
                 </div>
                 <div class="inter-wrap-style">
                     <div class="row">
+                            @foreach ($subProjects as $item)
+                                <div class="col-md-4 int-wrap-card">
+                                    <div class="int-sing-wrp">
+                                        <a href="#" class="iread vfc-ihover">
+                                            <div class="isw-box">
+                                                <div class="iswb-img">
+                                                    @if(isset($item->title_image))<img src="{{ Voyager::image($item->title_image) }}">@endif
+                                                </div>
 
-                        @foreach ($subProjects as $item)
-                            <div class="col-md-4 int-wrap-card">
-                                <div class="int-sing-wrp">
-                                    <a href="#" class="iread vfc-ihover">
-                                        <div class="isw-box">
-                                            <div class="iswb-img">
-                                                @if(isset($item->title_image))<img src="{{ Voyager::image($item->title_image) }}">@endif
+                                                <div class="iswb-name">
+                                                    <h6 style=" color: #17469e; ">{{ $project->title }}</h6>
+                                                    <h3>{{ $item->title }}</h3>
+                                                </div>
                                             </div>
+                                        </a>
 
-                                            <div class="iswb-name">
-                                                <h6 style=" color: #17469e; ">{{ $project->title }}</h6>
-                                                <h3>{{ $item->title }}</h3>
-                                            </div>
-                                        </div>
-                                    </a>
+                                        <div class="inter-detail ">
 
-                                    <div class="inter-detail ">
+                                            <a href="#" class="iclose"><i class="icon-close icons"></i> </a>
 
-                                        <a href="#" class="iclose"><i class="icon-close icons"></i> </a>
+                                            @php
+                                                $subProject = json_decode($item->data);
+                                            @endphp
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="id-ns">
+                                                        <!--  <img src="/images/vfc/empower-logo.png" class="if-logo"> -->
+                                                        <h2>{{ $item->title }}</h2>
 
-                                        @php
-                                            $subProject = json_decode($item->data);
-                                        @endphp
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="id-ns">
-                                                    <!--  <img src="/images/vfc/empower-logo.png" class="if-logo"> -->
-                                                    <h2>{{ $item->title }}</h2>
-
-                                                    {!! $subProject->shortDescription !!}
+                                                        {!! $subProject->shortDescription !!}
 
 
-                                                    <div class="id-imp-wrap">
-                                                        @foreach ($subProject->counterSection as $counterItem)
-                                                            <div class="id-imapct">
-                                                                <div class="idi-icon">
-                                                                    <img
-                                                                        src="{{ Voyager::image('icons/' . $counterItem->icon) }}">
+                                                        <div class="id-imp-wrap">
+                                                            @foreach ($subProject->counterSection as $counterItem)
+                                                                <div class="id-imapct">
+                                                                    <div class="idi-icon">
+                                                                        <img
+                                                                            src="{{ Voyager::image('icons/' . $counterItem->icon) }}">
+                                                                    </div>
+
+                                                                    <div class="idi-num">
+                                                                        <h4>{{ $counterItem->count }}
+                                                                            <span>{{ $counterItem->subscript }}</span>
+                                                                        </h4>
+                                                                        <p>{{ $counterItem->title }}</p>
+                                                                    </div>
                                                                 </div>
+                                                            @endforeach
 
-                                                                <div class="idi-num">
-                                                                    <h4>{{ $counterItem->count }}
-                                                                        <span>{{ $counterItem->subscript }}</span>
-                                                                    </h4>
-                                                                    <p>{{ $counterItem->title }}</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <div class="id-overflow">
+                                                        @foreach ($subProject->description as $subProjectItem)
+                                                            <div class="id-detail">
+                                                                <h4>{{ $subProjectItem->title }}</h4>
+                                                                {!! $subProjectItem->body !!}
+                                                            </div>
+                                                        @endforeach
+                                                        @if (!empty($subProject->flagSection))
+                                                            <div class="id-detail">
+                                                                <h4>Volunteers from</h4>
+                                                                <ul class="sdg-logo-list">
+                                                                    @foreach ($subProject->flagSection as $item)
+                                                                        <li><img
+                                                                                src="/storage/sub-projects/countries/{{ $item }}">
+                                                                        </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
+                                                        @endif
+                                                        @foreach ($subProject->carouselSection as $carouselItem)
+                                                            <div class="id-detail id-tes">
+                                                                <h4>{{ $carouselItem->topLevelTitle }}</h4>
+
+                                                                <div class="id-test owl-carousel .owl-theme">
+                                                                    @foreach ($carouselItem->topLevelBody as $slider)
+                                                                        <div class="item">
+                                                                            <div class="id-test-sing">
+                                                                                <div class="row align-items-center">
+                                                                                    <div class="col-md-4">
+                                                                                        <div class="id-tes-img">
+                                                                                            <img
+                                                                                                src="{{ Voyager::image('sub-projects/carousel-images/' . $slider->image) }}">
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-md-8">
+                                                                                        <div class="id-tes-text">
+                                                                                            {!! $slider->insideBody !!}
+
+                                                                                            <h5>{{ $slider->insideTitle }} 
+                                                                                            </h5>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                         @endforeach
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-8">
-                                                <div class="id-overflow">
-                                                    @foreach ($subProject->description as $subProjectItem)
-                                                        <div class="id-detail">
-                                                            <h4>{{ $subProjectItem->title }}</h4>
-                                                            {!! $subProjectItem->body !!}
-                                                        </div>
-                                                    @endforeach
-                                                    @if (!empty($subProject->flagSection))
-                                                        <div class="id-detail">
-                                                            <h4>Volunteers from</h4>
-                                                            <ul class="sdg-logo-list">
-                                                                @foreach ($subProject->flagSection as $item)
-                                                                    <li><img
-                                                                            src="/storage/sub-projects/countries/{{ $item }}">
-                                                                    </li>
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                    @endif
-                                                    @foreach ($subProject->carouselSection as $carouselItem)
-                                                        <div class="id-detail id-tes">
-                                                            <h4>{{ $carouselItem->topLevelTitle }}</h4>
-
-                                                            <div class="id-test owl-carousel .owl-theme">
-                                                                @foreach ($carouselItem->topLevelBody as $slider)
-                                                                    <div class="item">
-                                                                        <div class="id-test-sing">
-                                                                            <div class="row align-items-center">
-                                                                                <div class="col-md-4">
-                                                                                    <div class="id-tes-img">
-                                                                                        <img
-                                                                                            src="{{ Voyager::image('sub-projects/carousel-images/' . $slider->image) }}">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-8">
-                                                                                    <div class="id-tes-text">
-                                                                                        {!! $slider->insideBody !!}
-
-                                                                                        <h5>{{ $slider->insideTitle }} 
-                                                                                        </h5>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
+                                                        @if ($subProject->mapSection->mapCode || $subProject->mapSection->districtName)
+                                                            <div class="id-detail">
+                                                                <h4>Our Project Site</h4>
+                                                                @if ($subProject->mapSection->mapCode)
+                                                                    <div class="map">
+                                                                        {!! $subProject->mapSection->mapCode !!}
                                                                     </div>
-                                                                @endforeach
+                                                                @endif
+                                                                @if ($subProject->mapSection->districtName)
+                                                                    <div class="cov-resp-names">
+                                                                        <ul>
+                                                                            @foreach (explode(',', $subProject->mapSection->districtName) as $item)
+                                                                                <li>{{ $item }}</li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                @endif
+
                                                             </div>
-                                                        </div>
-                                                    @endforeach
-                                                    @if ($subProject->mapSection->mapCode || $subProject->mapSection->districtName)
-                                                        <div class="id-detail">
-                                                            <h4>Our Project Site</h4>
-                                                            @if ($subProject->mapSection->mapCode)
-                                                                <div class="map">
-                                                                    {!! $subProject->mapSection->mapCode !!}
-                                                                </div>
-                                                            @endif
-                                                            @if ($subProject->mapSection->districtName)
-                                                                <div class="cov-resp-names">
-                                                                    <ul>
-                                                                        @foreach (explode(',', $subProject->mapSection->districtName) as $item)
-                                                                            <li>{{ $item }}</li>
-                                                                        @endforeach
-                                                                    </ul>
-                                                                </div>
-                                                            @endif
-
-                                                        </div>
-                                                    @endif
+                                                        @endif
+                                                    </div>
                                                 </div>
+
                                             </div>
-
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
                     </div>
                 </div>
             </div>
@@ -460,6 +459,7 @@
         @if (view()->exists('staticProjects.' . Str::slug($project->title)))
             @include('staticProjects.'.Str::slug($project->title))
         @endif
+    @endif
     @endif
 
 
