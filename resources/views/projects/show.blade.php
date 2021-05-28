@@ -323,7 +323,7 @@
                                     <a href="#" class="iread vfc-ihover">
                                         <div class="isw-box">
                                             <div class="iswb-img">
-                                                <img src="{{ Voyager::image($item->title_image) }}">
+                                                @if(isset($item->title_image))<img src="{{ Voyager::image($item->title_image) }}">@endif
                                             </div>
 
                                             <div class="iswb-name">
