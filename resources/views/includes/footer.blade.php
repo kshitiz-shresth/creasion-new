@@ -12,7 +12,7 @@
                 <div class="col-md-3 ">
                     <div class="footer-links">
                         <h4>Legal Details</h4>
-                        
+
                         <div class="fo-loc">
                             <h5>DAO Registration No. 221</h5>
 
@@ -27,8 +27,11 @@
                 <div class="col-md-3">
                     <div class="footer-links">
                         <h4>Our Projects</h4>
-                         @foreach (\App\Project::orderBy('order')->get() as $item)
-                        <a href="{{ route('showProject',Str::slug($item->title)) }}">{{ $item->title }}</a>
+                        @php
+                            $projects = menu('creasion','_json')->where('title','PROJECTS')[1]->children->sortBy('order');
+                        @endphp
+                         @foreach ($projects as $item)
+                        <a href="{{ $item->url }}">{{ $item->title }}</a>
                         @endforeach
                     </div>
                 </div>
@@ -44,7 +47,7 @@
                              <h5><a href="tel:+977-1-4420784">+977-1-4420784 /</a><a href="tel:+977-1-4440085">01-4440085</a></h5>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -64,14 +67,14 @@
 
 
                         <div class="col-md-3">
-                            <p >Powered by 
+                            <p >Powered by
                                 <a href="https://www.hueshine.com/" target="_blank">
                                     Hue Shine
                                 </a>
                             </p>
                         </div>
                         <div class="col-md-3">
-                            
+
                         </div>
                     </div>
                 </div>
