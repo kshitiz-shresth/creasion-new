@@ -25,7 +25,7 @@ class PageController extends Controller
     public function getInsta(){
         return $instaData = collect(Http::get('https://systran-systran-platform-for-language-processing-v1.p.rapidapi.com/resources/dictionary/lookup')->json());
     }
-    
+
     public function getCareer(Request $request){
         if ($request->hasFile('cv')) {
             $file_name = $request->cv->hashName();
@@ -39,9 +39,9 @@ class PageController extends Controller
                 ]
                 );
         }else{
-           $cv = "[]";  
+           $cv = "[]";
         }
-        
+
         $career = new Career();
         $career->full_name = $request->full_name;
         $career->contact_number = $request->contact_number;
@@ -51,7 +51,7 @@ class PageController extends Controller
         $career->save();
         return 'done';
     }
-    
+
     public function file($filename){
         $path = public_path("myfiles/years/".$filename);
 
@@ -60,7 +60,7 @@ class PageController extends Controller
             return 'yes it exists';
         }
         abort(404);
-        
+
     }
 
     public function downloads(){
@@ -139,13 +139,24 @@ class PageController extends Controller
     // for Articles
     public function showArticles(Request $request)
     {
-       
-        $articles = Article::orderBy('date','desc')->get();
+        if(!$request->year && !$request->all){
+             $request['year'] = date('Y',strtotime(now()));
+        }
+         $articles = Article::
+                    when($request->year,function($query) use ($request){
+                        $query->whereYear('date',$request->year);
+                    })
+                    ->when($request->search,function($query) use ($request){
+                        $query->where('title', 'LIKE', "%{$request->search}%")
+                        ->orWhere('body', 'LIKE', "%{$request->search}%");
+                    })
+                    ->orderBy('date','desc')
+                    ->get();
         return view('pages.article.lists', compact(
             'articles'
         ));
     }
-    
+
     public function showArticleDetails($slug){
         $article = Article::where('slug',$slug)->first();
         return view('pages.article.single',compact(
@@ -189,7 +200,7 @@ class PageController extends Controller
         else{
             $blogs = Blog::orderBy('date', 'desc');
         }
-        
+
         if($request->category){
             $category_id = Category::where('slug',$request->category)->first()->id;
             $blogs = $blogs->where('category_id',$category_id)->get();

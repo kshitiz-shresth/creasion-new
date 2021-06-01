@@ -9,7 +9,7 @@
                 <h2 class="heading-text inline"><span>Event</span> Updates</h2>
             </div>
 
-            @foreach ($articles as $item)
+            @forelse ($articles as $item)
                 @if($loop->first)
                     <div class="feature-big-news latest-news" >
                         <div class="fbn-img" style="background: url('{{ Voyager::image($item->cover) }}');"></div>
@@ -19,7 +19,7 @@
 
                             <div class="art-writer-date">
                                 <h5>
-                                    By 
+                                    By
                                     <span>{{ $item->author }}</span>
                                 </h5>
 
@@ -47,16 +47,24 @@
 
                             <div class="col-md-3">
                                 <div class="news-archive-date">
-                                    <a href="" class="active">2020</a>
-                                    <a href="">2019</a>
-                                    <a href="">2018</a>
+                                    @php $recentYear = date('Y',strtotime(now())); @endphp
+                                    <a href="/news-articles?all=true" class="{{ !request('year') ? 'active' : '' }}">All</a>
+                                    <a href="?year={{ $recentYear }}" class="{{ request('year')==$recentYear ? 'active' : '' }}">{{ $recentYear }}</a>
+                                    <a href="?year={{ $recentYear-1 }}" class="{{ request('year')==$recentYear-1 ? 'active' : '' }}">{{ $recentYear-1 }}</a>
+                                    <a href="?year={{ $recentYear-2 }}" class="{{ request('year')==$recentYear-2 ? 'active' : '' }}">{{ $recentYear-2 }}</a>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="news-search-wrap">
-                                    <input type="text" name="" placeholder="Search News">
-                                    <a href="" class="search-btn"><i class="icon-magnifier icons"></i></a>
+                                    <form action="/news-articles" method="get">
+                                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Search News">
+                                        @if(request('year'))
+                                        <input type="hidden" name="year" value="{{ request('year') }}">
+                                        @endif
+                                        <button type="submit" class="search-btn"><i class="icon-magnifier icons"></i></button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -77,7 +85,7 @@
 
                                             <div class="art-writer-date">
                                                 <h5>
-                                                    By 
+                                                    By
                                                     <span>{{ $item->author }}</span>
                                                 </h5>
 
@@ -99,10 +107,41 @@
                 @if($loop->last)
                     </div>
                 @endif
-            @endforeach
+            @empty
+            <div class="news-archive">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5 class="heading-text inline"><span>News</span> Archive</h5>
+                    </div>
 
-          
-    </section>    
+                    <div class="col-md-3">
+                        <div class="news-archive-date">
+                            @php $recentYear = date('Y',strtotime(now())); @endphp
+                            <a href="/news-articles?all=true" class="{{ !request('year') ? 'active' : '' }}">All</a>
+                            <a href="?year={{ $recentYear }}" class="{{ request('year')==$recentYear ? 'active' : '' }}">{{ $recentYear }}</a>
+                            <a href="?year={{ $recentYear-1 }}" class="{{ request('year')==$recentYear-1 ? 'active' : '' }}">{{ $recentYear-1 }}</a>
+                            <a href="?year={{ $recentYear-2 }}" class="{{ request('year')==$recentYear-2 ? 'active' : '' }}">{{ $recentYear-2 }}</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="news-search-wrap">
+                            <form action="/news-articles" method="get">
+                                <input type="text" name="search" value="{{ request('search') }}" placeholder="Search News">
+                                @if(request('year'))
+                                <input type="hidden" name="year" value="{{ request('year') }}">
+                                @endif
+                                <button type="submit" class="search-btn"><i class="icon-magnifier icons"></i></button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforelse
+
+
+    </section>
 
 
 @endsection
