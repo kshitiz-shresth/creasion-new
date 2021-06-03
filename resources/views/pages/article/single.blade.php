@@ -39,7 +39,7 @@
 
 @section('body')
     <section class="news-detail-banner" style="background: url({{ Voyager::image($article->cover) }});">
-                
+
     </section>
 
     <section class="nd-body">
@@ -49,7 +49,7 @@
 
                 <div class="art-writer-date">
                     <h5>
-                        By 
+                        By
                         <span>{{ $article->author }}</span>
                     </h5>
 
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-{{--  
+{{--
     <section class="news-sec">
         <div class="container">
             <div class="news-wrap">
@@ -76,7 +76,7 @@
                         <div class="news-title">
                             <h4 class="heading-text"> <span>Recent</span> Blogs</h4>
                             <a href="article.html" >For an in-depth look at Creasion's publications, visit our media page.</a>
-                        </div>   
+                        </div>
                     </div>
 
                     <div class="col-lg-3 col-md-4">
@@ -128,8 +128,8 @@
 
 
 @section('js')
-    <script>
-        $('iframe').addClass('embed-responsive-item');
-        $('iframe').wrap("<div class='embed-responsive embed-responsive-16by9'></div>");
-    </script>
+    // <script>
+    //     $('iframe').addClass('embed-responsive-item');
+    //     $('iframe').wrap("<div class='embed-responsive embed-responsive-16by9'></div>");
+    // </script>
 @endsection

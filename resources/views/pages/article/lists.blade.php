@@ -45,7 +45,7 @@
                                 <h5 class="heading-text inline"><span>News</span> Archive</h5>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="news-archive-date">
                                     @php $recentYear = date('Y',strtotime(now())); @endphp
                                     <a href="/news-articles?all=true" class="{{ !request('year') ? 'active' : '' }}">All</a>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="news-search-wrap">
                                     <form action="/news-articles" method="get">
                                         <input type="text" name="search" value="{{ request('search') }}" placeholder="Search News">
