@@ -21,7 +21,7 @@
     <section class="another-head">
         <div class="container">
             @foreach ($teamCategories as $item)
-                <a href="?type={{ $item->slug }}" class="{{ $loop->first && request('type')==null ? 'active' : request('type')==$item->slug ? 'active' : '' }}">{{ $item->title }}</a>
+                <a href="?type={{ $item->slug }}" class="{{ $loop->first && request('type')==null ? 'active' : (request('type')==$item->slug ? 'active' : '') }}">{{ $item->title }}</a>
             @endforeach
         </div>
     </section>
