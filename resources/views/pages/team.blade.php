@@ -30,21 +30,47 @@
         <div class="container">
             <div class="row">
                 @foreach ($team as $item)
-                <div class="col-md-4 col-12">
-                    <div class="team-sing">
-                        <div class="team-img">
-                            <img src="{{ Voyager::image($item->image) }}">
-                        </div>
-
-                        <div class="team-text">
-                            <h4>{{ $item->name }}</h4>
-                            <p>{{ $item->designation }}</p>
+                <div class="col-md-4 col-12 int-wrap-card">
+                    <div class="team-click-wrap">
+                        <a href="#" class="iread">
+                            <div class="team-sing">
+                                <div class="team-img">
+                                    <img src="{{ Voyager::image($item->image) }}">
+                                </div>
+        
+                                <div class="team-text">
+                                    <h4>{{ $item->name }}</h4>
+                                    <p>{{ $item->designation }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="inter-detail">
+    
+                            <a href="#" class="iclose"><i class="icon-close icons"></i> </a>
+    
+                            <div class="row">
+                                <div class="col-md-4">
+                                   <div class="team-big-image">
+                                        <img src="{{ Voyager::image($item->image) }}">
+                                   </div>
+                                </div>
+    
+                                <div class="col-md-8">
+                                    <div class="id-overflow">
+                                        <div class="id-detail">
+                                            <h4>{{ $item->name }}</h4>
+                                            <p>
+                                                {!! $item->description !!}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
-
-
             </div>
         </div>
     </section>
