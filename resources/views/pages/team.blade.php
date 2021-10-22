@@ -32,7 +32,7 @@
                 @foreach ($team as $item)
                 <div class="col-md-4 col-12 int-wrap-card">
                     <div class="team-click-wrap">
-                        <a href="#" class="iread">
+                        <a href="#" class="{{ $item->description ? 'iread' : '' }}">
                             <div class="team-sing">
                                 <div class="team-img">
                                     <img src="{{ Voyager::image($item->image) }}">
@@ -44,6 +44,7 @@
                                 </div>
                             </div>
                         </a>
+                        @if($item->description)
                         <div class="inter-detail">
     
                             <a href="#" class="iclose"><i class="icon-close icons"></i> </a>
@@ -68,6 +69,7 @@
     
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
                 @endforeach
