@@ -28,7 +28,7 @@ class VolunteerForm extends Component
         $formData = $this->formData;
         Mail::send('emails.volunteerWithUs', $formData, function ($message) use ($formData) {
             $message->from('volunteerwithus@creasion.org', 'Creasion Message Receiver');
-            $message->to(['vfcnepal@creasion.org','avipsha@creasion.org' ,'avipsharayamajhi@gmail.com']);
+            $message->to(['vfcnepal@creasion.org','thinleydoma@creasion.org']);
             $message->subject('Message From Website By ' . $formData['firstName']);
         });
         session()->flash('message', "We appreciate you contacting us. We will get back in touch with you soon!");

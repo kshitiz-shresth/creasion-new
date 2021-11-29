@@ -34,7 +34,7 @@ class Contact extends Component
         );
         Mail::send('emails.contact', $formData, function ($message) use ($formData) {
             $message->from('receiver@creasion.org', 'Creasion Message Receiver');
-            $message->to(['info@creasion.org','avipsharayamajhi@gmail.com']);
+            $message->to(['info@creasion.org','thinleydoma@creasion.org']);
             $message->subject('Message From Website By ' . $formData['name']);
         });
         session()->flash('message', "We appreciate you contacting us. We will get back in touch with you soon!");

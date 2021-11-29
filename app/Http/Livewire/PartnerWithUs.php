@@ -44,7 +44,7 @@ class PartnerWithUs extends Component
         // Partner With Us
         Mail::send('emails.partnerWithUs', $formData, function ($message) use ($formData) {
             $message->from('partnerwithus@creasion.org', 'Creasion Message Receiver');
-            $message->to(['info@creasion.org','avipsharayamajhi@gmail.com']);
+            $message->to(['info@creasion.org','thinleydoma@creasion.org']);
             $message->subject('Message From Website By ' . $formData['firstName']);
         });
 
